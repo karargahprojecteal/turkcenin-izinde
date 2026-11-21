@@ -1,0 +1,213 @@
+export interface AcademicSource {
+  id: string;
+  citation: string;
+  authorOrInstitution: string;
+  year: string;
+  type: "book" | "encyclopedia" | "unesco" | "journal" | "archive";
+  url?: string;
+  doi?: string;
+  accessDate: string;
+  supports: {
+    tr: string;
+    en: string;
+  };
+}
+
+export const ACADEMIC_SOURCES: AcademicSource[] = [
+  {
+    id: "johanson-csato-2022",
+    citation: "Johanson, L., & Csató, É. Á. (Ed.). (2022). The Turkic Languages (2. baskı). London & New York: Routledge.",
+    authorOrInstitution: "Lars Johanson & Éva Á. Csató (Routledge)",
+    year: "2022",
+    type: "book",
+    url: "https://www.routledge.com/Routledge-Language-Family-Series/book-series/SE0091",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Türk dil ailesinin çağdaş sınıflandırması, coğrafi dağılımı ve 20 edebî dilin yapısal özellikleri.",
+      en: "Modern classification of the Turkic language family, geographic distribution, and structural features of 20 literary languages.",
+    },
+  },
+  {
+    id: "erdal-2004",
+    citation: "Erdal, M. (2004). A Grammar of Old Turkic. Leiden & Boston: Brill (Handbuch der Orientalistik).",
+    authorOrInstitution: "Marcel Erdal (Brill)",
+    year: "2004",
+    type: "book",
+    url: "https://brill.com/display/book/edcoll/9789004471177/BP000001.xml",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Eski Türkçe (Orhon, Eski Uygur, Karahanlı) döneminin dilbilgisi, sesbilgisi ve yazı sistemleri.",
+      en: "Grammar, phonology, and writing systems of Old Turkic (Orkhon, Old Uyghur, Karakhanid).",
+    },
+  },
+  {
+    id: "brill-etlo-classification",
+    citation: "Brill. Encyclopedia of Turkic Languages and Linguistics Online (ETLO) — Classification of Turkic Languages.",
+    authorOrInstitution: "Brill Reference Works",
+    year: "2021–2026",
+    type: "encyclopedia",
+    url: "https://referenceworks.brill.com/display/entries/ETLO/SIM-031966.xml",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Oğur–Genel Türkçe ayrımı, Halaççanın (Arğu) erken ayrılışı ve Doğu/Batı Eski Türkçe ayrımı.",
+      en: "Oghur–Common Turkic split, early separation of Khalaj (Arghu), and East/West Old Turkic distinction.",
+    },
+  },
+  {
+    id: "brill-etlo-runiform",
+    citation: "Brill. Encyclopedia of Turkic Languages and Linguistics Online (ETLO) — Runiform Scripts.",
+    authorOrInstitution: "Brill Reference Works",
+    year: "2021–2026",
+    type: "encyclopedia",
+    url: "https://referenceworks.brill.com/display/entries/ETLO/SIM-032267.xml",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Irk Bitig, Orhon-Yenisey runiform yazıtları ve Avrasya runik yazı geleneği.",
+      en: "Irk Bitig, Orkhon-Yenisei runiform inscriptions, and Eurasian runiform script tradition.",
+    },
+  },
+  {
+    id: "tekin-1991-1995",
+    citation: "Tekin, T. (1991). A New Classification of the Turkic Languages. Türk Dilleri Araştırmaları, 1, 5–18; Orhon Yazıtları (1995).",
+    authorOrInstitution: "Talat Tekin (TDK / Türk Dilleri Araştırmaları)",
+    year: "1991 / 1995",
+    type: "journal",
+    url: "https://tdkbelleten.gov.tr/tam-metin-pdf/893/tur",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Türk dillerinin fonolojik ölçütlere dayalı sınıflandırması ve Tonyukuk, Kül Tigin, Bilge Kağan yazıtlarının filolojik yayını.",
+      en: "Phonological classification of Turkic languages and philological edition of the Tonyukuk, Kul Tigin, and Bilge Khagan inscriptions.",
+    },
+  },
+  {
+    id: "unesco-orkhon-2004",
+    citation: "UNESCO World Heritage Centre. (2004). Orkhon Valley Cultural Landscape (Dossier 1081rev).",
+    authorOrInstitution: "UNESCO",
+    year: "2004",
+    type: "unesco",
+    url: "https://whc.unesco.org/en/list/1081/",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Orhon Vadisi arkeolojik alanı ve 6.–8. yüzyıl bozkır anıtlarının UNESCO Dünya Mirası statüsü.",
+      en: "UNESCO World Heritage status of the Orkhon Valley archaeological landscape and 6th–8th century monuments.",
+    },
+  },
+  {
+    id: "unesco-diwan-2017",
+    citation: "UNESCO Memory of the World Register. (2017). Dīwān Lughāt al-Turk (Compendium of the Turkic Dialects).",
+    authorOrInstitution: "UNESCO",
+    year: "2017",
+    type: "unesco",
+    url: "https://www.unesco.org/fr/memory-world/diwan-lughat-al-turk-compendium",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Kaşgarlı Mahmud'un Dîvânu Lugâti't-Türk eserinin 2017'de UNESCO Dünya Belleği Kütüğü'ne kaydı.",
+      en: "Inscription of Mahmud al-Kashgari's Diwan Lughat al-Turk in the UNESCO Memory of the World Register in 2017.",
+    },
+  },
+  {
+    id: "unesco-kutadgu-2019",
+    citation: "UNESCO Türkiye Millî Komisyonu. (2019). Kutadgu Bilig'in Yazılışının 950. Yılı Anma Programı.",
+    authorOrInstitution: "UNESCO Türkiye Millî Komisyonu",
+    year: "2019",
+    type: "unesco",
+    url: "https://www.unesco.org.tr/Home/AnnouncementDetail/369",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Yusuf Has Hacib'in Kutadgu Bilig eserinin 1069/1070 tarihlendirmesi ve UNESCO 950. yıl anması.",
+      en: "Dating of Yusuf Khass Hajib's Kutadgu Bilig to 1069/1070 and its 950th anniversary commemoration by UNESCO.",
+    },
+  },
+  {
+    id: "raschmann-2024",
+    citation: "Raschmann, S.-C. (2024). Old Uyghur Buddhist Scrolls: A Case Study Based on the Säkiz Yükmäk Yaruk Scrolls. Acta Orientalia Hungarica, 77(1), 75–134.",
+    authorOrInstitution: "Simone-Christiane Raschmann (Hamburg Univ. / Acta Orientalia)",
+    year: "2024",
+    type: "journal",
+    doi: "10.1556/062.2024.00415",
+    url: "https://real.mtak.hu/209571/1/062-article-p75.pdf",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Berlin Turfan Koleksiyonu'ndaki yaklaşık 8.000 Eski Uygurca el yazması ve blok baskı fragmanı.",
+      en: "Approximately 8,000 Old Uyghur manuscript and block print fragments in the Berlin Turfan Collection.",
+    },
+  },
+  {
+    id: "bbaw-turfan",
+    citation: "Berlin-Brandenburg Academy of Sciences and Humanities (BBAW). Turfanforschung (Turfan Studies).",
+    authorOrInstitution: "BBAW",
+    year: "2024",
+    type: "archive",
+    url: "https://www.bbaw.de/en/research/turfanforschung-turfan-studies",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Turfan İpek Yolu yazmalarının dijitalleştirilmesi ve koruma arşivi.",
+      en: "Digitization and preservation archive of the Turfan Silk Road manuscripts.",
+    },
+  },
+  {
+    id: "tdv-thomsen-2012",
+    citation: "Bilgin, A. A. (2012). THOMSEN, Vilhelm. TDV İslâm Ansiklopedisi.",
+    authorOrInstitution: "A. Azmi Bilgin (TDV İslâm Ansiklopedisi)",
+    year: "2012",
+    type: "encyclopedia",
+    url: "https://islamansiklopedisi.org.tr/thomsen-vilhelm",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Göktürk (Orhon-Yenisey) yazısının 1893'te Vilhelm Thomsen tarafından çözümlenmesi.",
+      en: "Decipherment of the Old Turkic (Orkhon-Yenisei) script by Vilhelm Thomsen in 1893.",
+    },
+  },
+  {
+    id: "tdv-cagatay-1993",
+    citation: "Eraslan, K. (1993). ÇAĞATAY EDEBİYATI. TDV İslâm Ansiklopedisi.",
+    authorOrInstitution: "Kemal Eraslan (TDV İslâm Ansiklopedisi)",
+    year: "1993",
+    type: "encyclopedia",
+    url: "https://islamansiklopedisi.org.tr/cagatay-edebiyati",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Çağatay Türkçesinin dönemleri, Ali Şîr Nevâî'nin klasikleştirici rolü ve 15.–19. yüzyıl yazı dili geleneği.",
+      en: "Periods of Chagatai Turkic, Ali-Shir Nava'i's classical role, and the 15th–19th century literary tradition.",
+    },
+  },
+  {
+    id: "yilmaz-2011",
+    citation: "Yılmaz, H. (2011). Learning to Read (Again): The Social Experiences of Turkey's 1928 Alphabet Reform. IJMES (Cambridge University Press).",
+    authorOrInstitution: "Hale Yılmaz (Cambridge University Press)",
+    year: "2011",
+    type: "journal",
+    url: "https://www.cambridge.org/core/journals/international-journal-of-middle-east-studies/article/learning-to-read-again-the-social-experiences-of-turkeys-1928-alphabet-reform/F313C1942EB18220E9FD9B2B417D5601",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "1 Kasım 1928 Harf Devrimi ve Millet Mektepleri üzerinden toplumsal okuryazarlık dönüşümü.",
+      en: "The November 1, 1928 Turkish Alphabet Reform and social literacy transformation via Nation's Schools.",
+    },
+  },
+  {
+    id: "vekam-1928",
+    citation: "Koç Üniversitesi VEKAM. Alphabet Reform and Press Regime in Türkiye 1928–1939.",
+    authorOrInstitution: "Koç Üniversitesi VEKAM",
+    year: "2024",
+    type: "archive",
+    url: "https://vekam.ku.edu.tr/en/alphabet-and-press-alphabet-reform-and-press-regime-in-turkiye-1928-1939/",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "1928–1939 döneminde Türkiye'de alfabe reformu ve matbuat uygulamaları.",
+      en: "Alphabet reform and press practices in Türkiye during 1928–1939.",
+    },
+  },
+  {
+    id: "robbeets-2023",
+    citation: "Robbeets, M., et al. (2023). Indo-European loanwords and exchange in Bronze Age Central and East Asia. PMC10432883.",
+    authorOrInstitution: "Martine Robbeets et al. (PubMed Central)",
+    year: "2023",
+    type: "journal",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10432883/",
+    accessDate: "2026-11-21",
+    supports: {
+      tr: "Proto-Türkçenin kuramsal zaman derinliği (~2000 yıl iç rekonstrüksiyon) ve Batı Moğolistan/bozkır temasları.",
+      en: "Theoretical time depth of Proto-Turkic (~2,000 years internal reconstruction) and western Mongolia/steppe contacts.",
+    },
+  },
+];
