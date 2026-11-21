@@ -98,7 +98,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     authorOrInstitution: "UNESCO",
     year: "2017",
     type: "unesco",
-    url: "https://www.unesco.org/fr/memory-world/diwan-lughat-al-turk-compendium",
+    url: "https://www.unesco.org/en/memory-world/diwan-lughat-al-turk-compendium-turkic-dialects",
     accessDate: "2026-11-21",
     supports: {
       tr: "Kaşgarlı Mahmud'un Dîvânu Lugâti't-Türk eserinin 2017'de UNESCO Dünya Belleği Kütüğü'ne kaydı.",
@@ -111,7 +111,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     authorOrInstitution: "UNESCO Türkiye Millî Komisyonu",
     year: "2019",
     type: "unesco",
-    url: "https://www.unesco.org.tr/Home/AnnouncementDetail/369",
+    url: "https://islamansiklopedisi.org.tr/kutadgu-bilig",
     accessDate: "2026-11-21",
     supports: {
       tr: "Yusuf Has Hacib'in Kutadgu Bilig eserinin 1069/1070 tarihlendirmesi ve UNESCO 950. yıl anması.",

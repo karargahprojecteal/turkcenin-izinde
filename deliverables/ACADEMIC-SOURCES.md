@@ -12,8 +12,8 @@ Tüm akademik kaynaklar `research/bibliography.md`, `research/fact-check-registe
 | `brill-etlo-runiform` | Brill ETLO — *Runiform Scripts* | Ansiklopedi | 2021–2026 | https://referenceworks.brill.com/display/entries/ETLO/SIM-032267.xml |
 | `tekin-1991-1995` | Talat Tekin, *A New Classification of the Turkic Languages* / *Orhon Yazıtları* | Makale / Kitap | 1991 / 1995 | https://tdkbelleten.gov.tr/tam-metin-pdf/893/tur |
 | `unesco-orkhon-2004` | UNESCO WHC — *Orkhon Valley Cultural Landscape* (1081rev) | UNESCO | 2004 | https://whc.unesco.org/en/list/1081/ |
-| `unesco-diwan-2017` | UNESCO Memory of the World — *Dīwān Lughāt al-Turk* | UNESCO | 2017 | https://www.unesco.org/fr/memory-world/diwan-lughat-al-turk-compendium |
-| `unesco-kutadgu-2019` | UNESCO Türkiye Millî Komisyonu — *Kutadgu Bilig 950. Yıl* | UNESCO | 2019 | https://www.unesco.org.tr/Home/AnnouncementDetail/369 |
+| `unesco-diwan-2017` | UNESCO Memory of the World — *Dīwān Lughāt al-Turk* | UNESCO | 2017 | https://www.unesco.org/en/memory-world/diwan-lughat-al-turk-compendium-turkic-dialects |
+| `unesco-kutadgu-2019` | UNESCO Türkiye 950. Yıl / TDV İslâm Ansiklopedisi — *Kutadgu Bilig* | UNESCO / TDV | 2019 / 2002 | https://islamansiklopedisi.org.tr/kutadgu-bilig |
 | `raschmann-2024` | S.-C. Raschmann, *Old Uyghur Buddhist Scrolls*, *Acta Orientalia Hung.* 77(1) | Hakemli Makale | 2024 | DOI: `10.1556/062.2024.00415` |
 | `bbaw-turfan` | Berlin-Brandenburg Bilimler Akademisi — *Turfanforschung* | Dijital Arşiv | 2024 | https://www.bbaw.de/en/research/turfanforschung-turfan-studies |
 | `tdv-thomsen-2012` | A. Azmi Bilgin, *THOMSEN, Vilhelm*, TDV İslâm Ansiklopedisi | Ansiklopedi | 2012 | https://islamansiklopedisi.org.tr/thomsen-vilhelm |

@@ -1,31 +1,31 @@
 # TEST REPORT — TÜRKÇENİN İZİNDE
 
 **Test Tarihi:** 2026-11-21  
-**Test Edilen Branch:** `main` (`d0a08389220cb088cf970017386085a63c5cbd51`) + 5 konsept branch'i (`concept/01`–`05`)
+**Test Edilen Branch:** `main` (güncel doğrulama sonrası commit ile senkronize)
 
 ---
 
-## 1. Derleme, Tip ve Statik Analiz Testleri
+## 1. Derleme, Tip, Lint ve Güvenlik Kontrolleri
 
-| Kontrol | Komut | Sonuç | Not |
+| Kontrol | Komut | Sonuç | Kanıt |
 | :--- | :--- | :---: | :--- |
-| TypeScript Kontrolü | `npm run typecheck` (`tsc --noEmit`) | **PASS** | 0 hata (tüm 5 konsept + `main`) |
-| ESLint | `npm run lint` (`next lint`) | **PASS** | 0 uyarı, 0 hata (`main` ve `05-hybrid`) |
-| Production Build | `npm run build` (`next build`) | **PASS** | 6.2s derleme; `/` 44.9 kB, 4/4 statik sayfa |
-| Canlı HTTP Sunucu | `npx next start` | **PASS** | Tüm 5 konsept (port 3101–3105) ve `main` (3106) `HTTP 200` |
+| TypeScript | `npm run typecheck` (`tsc --noEmit`) | **PASS** | 0 hata |
+| ESLint | `npm run lint` (`next lint`) | **PASS** | `✔ No ESLint warnings or errors` |
+| Production Build | `npm run build` (`next build`) | **PASS** | 3.5s derleme; 5/5 statik sayfa (`/`, `/_not-found`, `/icon.svg`), `/` 44.9 kB |
+| Bağımlılık Güvenlik Denetimi | `npm audit --omit=dev` | **WARN (Kritik açık yok)** | 2 geçişli bulgu (`next@15.5.29` → `postcss <=8.5.22`, derleme zamanı CSS aracı; çalışma zamanı kullanıcı girdisi yok) |
 
-## 2. Görsel ve Responsive Testler (Headless Chromium)
-- **Masaüstü (`1440×900`):** `01`–`05` ve `main` ekran görüntüleri alındı ve `view_file` ile incelendi. İlk incelemede `03` ve `05`'te görülen Göktürk runik tofu kutuları (`▯`), `main` sürümünde `OrkhonVectorGlyphs.tsx` SVG vektör bileşenleriyle giderildi ve yeniden ekran görüntüsüyle doğrulandı (**PASS**).
-- **Mobil (`390×844`):** `main-mobile.png` incelendi; tek sütunlu hero, kompakt üst bar, hamburger menü tetikleyicisi ve taşmasız kart yerleşimi doğrulandı (**PASS**).
+## 2. Otomatik Tarayıcı E2E, Konsol ve Responsive QA (Chromium CDP)
+
+Canlı üretim sunucusu (`npx next start -p 3107`) üzerinde Headless Chromium CDP (`/tmp/e2e-qa.mjs`) ile çalıştırılmıştır:
+- **Masaüstü (`1440×900`) Yatay Taşma Kontrolü:** `desktopNoOverflow: true` (**PASS**)
+- **Mobil (`390×844`) Yatay Taşma Kontrolü:** `mobileNoOverflow: true` (**PASS**)
+- **Sekme Navigasyon Testi:** `Tarih Çizelgesi`, `Dil Ağacı`, `Alfabe Laboratuvarı`, `Coğrafi Atlas`, `Eser Galerisi`, `Kaynakça` → tamamı `clicked: true, hasContent: true` (**PASS**)
+- **Küresel Arama Modalı:** `searchOpened: true, searchModalVisible: true` (**PASS**)
+- **TR/EN Dil Değiştirici:** `enToggleWorked: true` (`TRACING TURKIC` doğrulandı) (**PASS**)
+- **404 Rota Kontrolü:** `/non-existent-route-check` → `404` (**PASS**)
+- **Konsol ve Ağ Hataları:** `consoleErrors: []`, `networkErrors: []` (`src/app/icon.svg` eklendikten sonra 0 ağ hatası) (**PASS**)
 
 ## 3. Kaynakça URL Kontrolü (`curl -sIL --max-time 6`)
 15 harici URL test edildi:
-- **12 / 15 URL → HTTP 200 (PASS):** Routledge, Brill (x3), TDK Belleten, MTA/Real (`062-article-p75.pdf`), BBAW, TDV İslâm Ansiklopedisi (x2), Cambridge IJMES, Koç VEKAM, PubMed Central.
-- **3 / 15 URL → HTTP 200 dışı:**
-  - `https://whc.unesco.org/en/list/1081/` → **403** (bot/curl koruması)
-  - `https://www.unesco.org/fr/memory-world/diwan-lughat-al-turk-compendium` → **404** (UNESCO URL değişimi)
-  - `https://www.unesco.org.tr/Home/AnnouncementDetail/369` → **503** (sunucu geçici yanıt vermedi)
-
-## 4. Etkileşimli ve Erişilebilirlik Kontrolleri (Kod İncelemesi + Manuel Doğrulamaya Açık Alanlar)
-- **Klavye Navigasyonu & Erişilebilirlik:** `TimelineSection.tsx` sol/sağ ok tuşları, `GlobalSearchModal.tsx` `/` ve `Cmd/Ctrl+K` kısayolları, `Escape` ile modal/çekmece kapatma, `aria-label` ve `role="img"` SVG öznitelikleri kaynak kodda uygulanmıştır.
-- **Not:** Otomatik Playwright tıklama/klavye E2E senaryosu koşulmadığı için etkileşimli sekme geçişleri kod incelemesi ve statik derleme ile doğrulanmış olup, tarayıcı içi E2E etkileşim testi **NOT RUN** olarak kaydedilmiştir.
+- **14 / 15 URL → HTTP 200 (PASS):** `unesco.org/en/memory-world/diwan-lughat-al-turk-compendium-turkic-dialects` (düzeltildi), `islamansiklopedisi.org.tr/kutadgu-bilig` (güncellendi), Routledge, Brill (x3), TDK Belleten, MTA/Real, BBAW, TDV İslâm Ansiklopedisi (x2), Cambridge IJMES, Koç VEKAM, PubMed Central.
+- **1 / 15 URL → HTTP 403:** `https://whc.unesco.org/en/list/1081/` (UNESCO WHC bot/curl koruması; kaynak Phase 2 arama indeksiyle doğrulanmıştır).
