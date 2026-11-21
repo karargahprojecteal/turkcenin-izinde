@@ -19,6 +19,7 @@ import { TURKIC_BRANCHES } from "@/data/languageFamily";
 import { ALPHABET_SYSTEMS } from "@/data/alphabets";
 import { HISTORICAL_ARTIFACTS } from "@/data/artifacts";
 import { ACADEMIC_SOURCES } from "@/data/bibliography";
+import { OrkhonTengriTegSvg } from "./OrkhonVectorGlyphs";
 import { SectionId } from "./types";
 
 interface OverviewSectionProps {
@@ -231,11 +232,8 @@ export function OverviewSection({ locale, onNavigate }: OverviewSectionProps) {
                 UNESCO
               </span>
             </div>
-            <div
-              dir="rtl"
-              className="my-3 rounded-lg bg-[#0f172a]/80 p-3 text-center font-mono text-xl tracking-widest text-[#f8f6f1]"
-            >
-              𐱅𐰭𐰼𐰃 𐱅𐰀𐰏
+            <div className="my-3 rounded-lg border border-[#b45309]/30 bg-[#0f172a]/85 px-3 py-3 text-[#fbbf24]">
+              <OrkhonTengriTegSvg className="h-10 w-full" />
             </div>
             <div className="space-y-1 text-xs text-[#cbd5e1]">
               <p className="font-mono text-[#7dd3fc]">Teŋri teg...</p>

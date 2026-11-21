@@ -15,6 +15,7 @@ import {
   Globe,
 } from "lucide-react";
 import { Locale, UI_COPY } from "@/data/i18n";
+import { OrkhonEmblemSvg } from "./OrkhonVectorGlyphs";
 import { SectionId } from "./types";
 
 interface MuseumHeaderProps {
@@ -71,10 +72,8 @@ export function MuseumHeader({
             }}
             className="focus-museum flex items-center gap-3 rounded-lg text-left transition-opacity hover:opacity-85"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#b45309]/40 bg-[#0f172a] text-[#f8f6f1] shadow-sm">
-              <span className="font-serif text-lg font-bold tracking-wider text-[#f8f6f1]">
-                𐱅
-              </span>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#b45309]/40 bg-[#0f172a] text-[#fbbf24] shadow-sm">
+              <OrkhonEmblemSvg className="h-5 w-5" />
             </div>
             <div className="hidden sm:block">
               <div className="font-serif text-sm font-bold tracking-[0.14em] text-[#0f172a]">
