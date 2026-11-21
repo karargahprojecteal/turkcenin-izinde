@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --museum-charcoal: #111113;
+  --museum-surface: #1a1a1f;
+  --museum-surface-elevated: #222228;
+  --museum-cream: #f5f0e6;
+  --museum-stone: #a8a29e;
+  --museum-brass: #d97706;
+  --museum-brass-soft: rgba(217, 119, 6, 0.16);
+  --museum-border: rgba(245, 240, 230, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--museum-charcoal);
+  color: var(--museum-cream);
+}
+
+body {
+  background-color: var(--museum-charcoal);
+  color: var(--museum-cream);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Epigraphic & Historical Script Font Stacks */
+.font-epigraphy {
+  font-family:
+    "Noto Sans Old Turkic",
+    "Noto Sans Old Uyghur",
+    "Noto Sans Manichaean",
+    "Noto Naskh Arabic",
+    "Amiri",
+    "Segoe UI Historic",
+    "Apple Symbols",
+    var(--font-serif),
+    serif;
+}
+
+/* Vertical Top-to-Bottom, Left-to-Right Column Flow (Old Uyghur) */
+.script-vertical-ttb {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+/* Subtle Museum Grid & Illuminated Glow */
+.museum-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(245, 240, 230, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 240, 230, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.brass-glow {
+  box-shadow:
+    0 0 0 1px rgba(217, 119, 6, 0.25),
+    0 18px 45px -18px rgba(217, 119, 6, 0.25);
+}
+
+/* Custom Scrollbar for Obsidian Gallery */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111113;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c2c34;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+}
