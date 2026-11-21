@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-obsidian: #0b1320;
+  --bg-card: #131e30;
+  --bg-card-elevated: #18263d;
+  --accent-turquoise: #14b8a6;
+  --accent-gold: #f59e0b;
+  --border-slate: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0b1320;
+  color: #e2e8f0;
+}
+
+body {
+  background-color: #0b1320;
+  color: #e2e8f0;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle cartographic coordinate grid background */
+.cartographic-grid {
+  background-image:
+    linear-gradient(to right, rgba(20, 184, 166, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 184, 166, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Custom dark slate scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1320;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14b8a6;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  70% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.hub-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulseRing 2.6s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
