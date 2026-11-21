@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-serif: "Palatino Linotype", "Book Antiqua", Georgia, Cambria, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --museum-alabaster: #f8f6f1;
+  --museum-parchment: #f1ede4;
+  --museum-border: #e2dacb;
+  --museum-navy: #0f172a;
+  --museum-turquoise: #0e7490;
+  --museum-bronze: #b45309;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--museum-alabaster);
+    color: var(--museum-navy);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--museum-alabaster);
+    color: var(--museum-navy);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom subtle museum scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1ede4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0e7490;
+}
+
+/* Focus ring utility for keyboard accessibility */
+.focus-museum:focus-visible {
+  outline: 2px solid #0e7490;
+  outline-offset: 2px;
+}
