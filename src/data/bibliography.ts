@@ -262,15 +262,15 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
   },
   {
     id: "unicode-old-turkic-2024",
-    citation: "The Unicode Consortium. (2024). The Unicode Standard, Version 16.0, Chapter 14.8: Old Turkic.",
+    citation: "The Unicode Consortium. (2026). The Unicode Standard, Version 18.0, Chapters 14.8 (Old Turkic) and 14.10 (Sogdian).",
     authorOrInstitution: "The Unicode Consortium",
-    year: "2024",
+    year: "2026",
     type: "archive",
-    url: "https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-14/",
+    url: "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-14/",
     accessDate: "2026-11-22",
     supports: {
-      tr: "Eski Türk yazısının Unicode kod aralığı, Orhon-Yenisey tanıklıkları ve yazı tarihine ilişkin teknik bilgiler.",
-      en: "Unicode encoding, Orkhon-Yenisei attestations, and technical details of the Old Turkic script.",
+      tr: "Eski Türk ve Soğd yazılarının Unicode kod aralıkları, tarihî tanıklıkları ve yazı özelliklerine ilişkin teknik bilgiler.",
+      en: "Unicode encoding, historical attestations, and technical details of the Old Turkic and Sogdian scripts.",
     },
   },
   {
