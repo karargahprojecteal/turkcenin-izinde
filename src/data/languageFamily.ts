@@ -282,12 +282,12 @@ export const TURKIC_BRANCHES: TurkicBranch[] = [
     name: { tr: "Arğu (Halaçça) Kolu", en: "Arghu (Khalaj) Branch" },
     macroGroup: "common-turkic",
     diagnosticFeature: {
-      tr: "Proto-Türkçe söz başı h- sesinin ve Eski Türkçe d sesinin korunumu (hadaq 'ayak').",
-      en: "Preservation of Proto-Turkic initial h- and Old Turkic intervocalic d (hadaq 'foot').",
+      tr: "Halaççada söz başı h- biçimi ve Eski Türkçe d sesinin korunumu (hadaq 'ayak'); tarihî açıklaması ayrıca tartışılır.",
+      en: "Halaç initial h- and Old Turkic intervocalic d (hadaq 'foot'); its historical interpretation remains debated.",
     },
     description: {
-      tr: "Orta İran'da bir dil adası olarak yaşayan Halaçça, Gerhard Doerfer'in araştırmalarıyla Genel Türkçe içinde erken ayrılmış özgün bir kol olarak tanımlanmıştır.",
-      en: "Spoken as a linguistic island in central Iran, Khalaj was shown by Gerhard Doerfer to be an early-diverged archaic branch of Common Turkic.",
+      tr: "Orta İran'da yaşayan Halaçça, Gerhard Doerfer'in araştırmalarıyla arkaik özellikleri belgelenmiş özel bir Türk dili olarak tanımlanmıştır. Genel Türkçe içindeki yeri ve tarihî Arğu bağlantısının nasıl modellenmesi gerektiği sınıflandırma literatüründe ihtiyatla ele alınmalıdır.",
+      en: "Spoken in central Iran, Khalaj has archaic features documented by Gerhard Doerfer. Its exact position within Common Turkic and the historical Arghu connection should be treated cautiously in classification models.",
     },
     colorToken: "#7c2d12",
     languages: [
