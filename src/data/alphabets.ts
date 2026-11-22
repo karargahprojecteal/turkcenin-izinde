@@ -299,4 +299,32 @@ export const ALPHABET_SYSTEMS: AlphabetSystem[] = [
     },
     sourceIds: ["bbaw-turfan", "erdal-2004"],
   },
+
+  {
+    id: "latin-medieval",
+    name: { tr: "Orta Çağ Latin Harfli Çevriyazı", en: "Medieval Latin Transcription" },
+    writingSystemType: { tr: "Latin Harfli Çok Dilli Yazım", en: "Latin-based multilingual orthography" },
+    era: { tr: "13.–14. Yüzyıl Kuman-Kıpçak metinleri", en: "13th–14th century Cuman-Kipchak texts" },
+    direction: "ltr",
+    directionLabel: { tr: "Soldan sağa yatay", en: "Left-to-right horizontal" },
+    region: { tr: "Karadeniz'in kuzeyi, Kırım ve Venedik yazma geleneği", en: "Northern Black Sea, Crimea and Venetian manuscript tradition" },
+    signCount: "Tek bir standart alfabe değildir; yazıcıya göre değişir",
+    unicodeBlock: "Latin script (Unicode Basic Latin and extensions)",
+    sampleWord: { original: "tatar til", transliteration: "tatar til", meaning: { tr: "Tatar/Kıpçak dili", en: "Tatar/Kipchak language" } },
+    glyphs: [
+      { glyph: "c", transliteration: "c (bağlama göre)", phonetic: "Değişken", note: { tr: "Orta Çağ Latin yazımında değerler yazıcıya göre değişebilir.", en: "Values vary by scribe in medieval Latin orthography." } },
+      { glyph: "ch", transliteration: "ç / č (bağlama göre)", phonetic: "/tʃ/ (yaklaşık)", note: { tr: "Kuman seslerinin Latin harfleriyle yaklaşık gösterimi.", en: "Approximate Latin representation of Cuman sounds." } },
+      { glyph: "y", transliteration: "y / ı / i (bağlama göre)", phonetic: "Değişken", note: { tr: "Tek bir ses-değer eşleşmesi varsayılmamalıdır.", en: "No single sound-value mapping should be assumed." } },
+    ],
+    description: {
+      tr: "Codex Cumanicus, Kuman-Kıpçak söz varlığını ve metinlerini Orta Çağ Latin yazı alışkanlıklarıyla kaydeder. Bu yazım, 1928 Türkiye Türkçesi Latin alfabesiyle aynı standart sistem değildir.",
+      en: "The Codex Cumanicus records Cuman-Kipchak vocabulary and texts using medieval Latin writing conventions. This is not the same standardized system as the 1928 Turkish Latin alphabet.",
+    },
+    scientificNote: {
+      tr: "Orta Çağ Latin çevriyazısı değişken ve yazıcıya bağlıdır; modern Türk alfabesinin fonemik kuralları geriye dönük uygulanmamalıdır.",
+      en: "Medieval Latin transcription is variable and scribe-dependent; modern Turkish phonemic rules must not be projected backwards.",
+    },
+    sourceIds: ["iranica-codex-cumanicus-1992", "brill-etlo-classification"],
+  },
+
 ];
