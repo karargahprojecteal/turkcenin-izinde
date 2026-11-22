@@ -48,7 +48,7 @@ return <div className="ti-landing -mx-4 -mt-8 sm:-mx-6 lg:-mx-8">
       <div className="relative">
         <div aria-hidden className="absolute bottom-8 left-[17px] top-8 w-px bg-gradient-to-b from-[#c9a66b]/0 via-[#c9a66b]/60 to-[#c9a66b]/0 sm:left-[21px]" />
         <div className="space-y-5 sm:space-y-7">
-          {HISTORICAL_PERIODS.map((period,index)=>(
+          {HISTORICAL_PERIODS.map((period)=>(
             <article key={period.id} className="ti-scroll-reveal relative grid grid-cols-[36px_minmax(0,1fr)] gap-3 sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-5">
               <div className="relative flex justify-center pt-7"><span className={`relative z-10 h-3 w-3 rounded-full border-2 ${period.status==="reconstructed"?"border-[#d9bd8d] bg-[#07131d]":"border-[#d9bd8d] bg-[#c9a66b]"} shadow-[0_0_0_6px_rgba(201,166,107,.08)]`} /></div>
               <button type="button" onClick={()=>onNavigateToPeriod(period.id)} className="group border border-white/10 bg-white/[.035] p-5 text-left transition duration-300 hover:-translate-y-1 hover:border-[#c9a66b]/55 hover:bg-white/[.07] sm:p-7">
