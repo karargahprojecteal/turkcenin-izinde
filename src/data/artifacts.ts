@@ -143,7 +143,7 @@ export const HISTORICAL_ARTIFACTS: HistoricalArtifact[] = [
       tr: "İslami dönem Türk edebiyatının ilk büyük eseri; hem Uygur hem Arap harfli nüshalarının bulunması dönemin çift yazılı kültürünü kanıtlar.",
       en: "First major literary monument of Islamic Turkic literature; surviving in both Old Uyghur and Arabic scripts.",
     },
-    sourceIds: ["unesco-kutadgu-2019", "erdal-2004"],
+    sourceIds: ["tdv-kutadgu-2002", "erdal-2004"],
   },
   {
     id: "codex-cumanicus",

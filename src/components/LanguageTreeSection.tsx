@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import { GitBranch, Users, MapPin, Volume2, BookOpen } from "lucide-react";
 import { Locale, UI_COPY } from "@/data/i18n";
 import { TURKIC_BRANCHES, TurkicBranch, TurkicLanguageItem } from "@/data/languageFamily";
+import { COMPARATIVE_LEXICON, type ComparativeWordRow } from "@/data/comparativeLexicon";
 import { ACADEMIC_SOURCES } from "@/data/bibliography";
 
 interface LanguageTreeSectionProps {
@@ -25,14 +26,14 @@ const PHONOLOGY_MATRIX = [
     arghu: "qız / tüş (Halaçça)",
   },
   {
-    feature: { tr: "Eski Türkçe /d/ sesinin korunumu ('ayak')", en: "Retention of Old Turkic /d/ ('foot')" },
-    proto: "Old Turkic adaḳ",
+    feature: { tr: "Söz içi *d gelişimi ('ayak')", en: "Intervocalic *d ('foot')" },
+    proto: "*hadaq",
     oghur: "ura (Çuvaşça)",
     oghuz: "ayak (Türkçe)",
     kipchak: "ayaq (Kazakça)",
     karluk: "oyoq / ayaq (Özbekçe)",
     siberian: "adak (Tuva) / azax (Hakas)",
-    arghu: "hadaq (Halaçça · h- ve -d-)",
+    arghu: "hadaq (Halaçça · h- + -d-)",
   },
   {
     feature: { tr: "Hece sonu -g ('dağ')", en: "Syllable-final -g ('mountain')" },
@@ -94,7 +95,7 @@ export function LanguageTreeSection({
     { id: "kipchak", x: 455, y: 295, shortLabel: locale === "tr" ? "Kıpçak (KB)" : "Kipchak (NW)" },
     { id: "karluk", x: 600, y: 295, shortLabel: locale === "tr" ? "Karluk (GD)" : "Karluk (SE)" },
     { id: "siberian", x: 745, y: 295, shortLabel: locale === "tr" ? "Sibirya (KD)" : "Siberian (NE)" },
-    { id: "arghu", x: 875, y: 295, shortLabel: locale === "tr" ? "Halaç (özel konum)" : "Khalaj (special status)" },
+    { id: "arghu", x: 875, y: 295, shortLabel: locale === "tr" ? "Arğu (Halaç)" : "Arghu (Khalaj)" },
   ];
 
   return (
@@ -106,8 +107,8 @@ export function LanguageTreeSection({
         </h2>
         <p className="mt-1 text-sm text-[#0f172a]/70">
           {locale === "tr"
-            ? "Bu şema, Oğur / Genel Türkçe ayrımını ve karşılaştırma için kullanılan başlıca grupları gösterir. Sibirya grubunun tek bir soy dalı olup olmadığı ve Halaççanın tarihî konumu tartışmalıdır."
-            : "This diagram shows the Oghur / Common Turkic split and major groups used for comparison. Whether Siberian Turkic forms one genealogical branch and the historical position of Khalaj remain debated."}
+            ? "Proto-Türkçeden Oğur ve Genel Türkçe dallarına ayrılan 6 ana kol. İncelemek istediğiniz dalı veya dili seçin."
+            : "6 major branches splitting from Proto-Turkic into Oghur and Common Turkic. Select any branch or language node to inspect."}
         </p>
       </div>
 
@@ -312,11 +313,7 @@ export function LanguageTreeSection({
               style={{ backgroundColor: activeBranch.colorToken }}
             >
               <GitBranch className="h-3.5 w-3.5" />
-              {activeBranch.id === "arghu"
-                ? locale === "tr"
-                  ? "Erken Ayrışan Dal · Konumu Tartışmalı"
-                  : "Early-Diverging Branch · Placement Debated"
-                : activeBranch.macroGroup === "oghur"
+              {activeBranch.macroGroup === "oghur"
                 ? locale === "tr"
                   ? "Oğur Ana Kolu"
                   : "Oghur Macro-Group"
@@ -403,6 +400,8 @@ export function LanguageTreeSection({
               <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold text-[#fbbf24]">
                 {activeLanguage.status === "living"
                   ? copy.badges.living
+                  : activeLanguage.status === "endangered"
+                  ? copy.badges.endangered
                   : copy.badges.historical}
               </span>
             </div>
@@ -421,9 +420,9 @@ export function LanguageTreeSection({
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#fbbf24]" />
                 <div>
                   <span className="text-xs text-[#94a3b8]">
-                    {locale === "tr" ? "Coğrafya: " : "Region: "}
+                    {locale === "tr" ? "Ülkeler / Coğrafya: " : "Countries / Region: "}
                   </span>
-                  <span>{activeLanguage.region[locale]}</span>
+                  <span>{activeLanguage.countries[locale]} ({activeLanguage.region[locale]})</span>
                 </div>
               </div>
               {activeLanguage.speakersApprox && (
@@ -434,6 +433,9 @@ export function LanguageTreeSection({
                       {locale === "tr" ? "Konuşur Sayısı: " : "Approx. Speakers: "}
                     </span>
                     <span>{activeLanguage.speakersApprox}</span>
+                    <span className="ml-1.5 text-[11px] text-[#94a3b8]">
+                      ({activeLanguage.speakerDataYear})
+                    </span>
                   </div>
                 </div>
               )}
@@ -441,12 +443,30 @@ export function LanguageTreeSection({
                 <Volume2 className="mt-0.5 h-4 w-4 shrink-0 text-[#38bdf8]" />
                 <div>
                   <span className="text-xs text-[#94a3b8]">
-                    {locale === "tr" ? "Ayırt Edici Özellik: " : "Key Feature: "}
+                    {locale === "tr" ? "Ses & Gramer: " : "Phonology & Grammar: "}
                   </span>
-                  <span>{activeLanguage.keyFeature[locale]}</span>
+                  <span>{activeLanguage.keyFeature[locale]} — {activeLanguage.grammarFeature[locale]}</span>
                 </div>
               </div>
             </div>
+
+            {activeLanguage.sampleWords.length > 0 && (
+              <div>
+                <div className="mb-1.5 text-xs font-semibold text-[#94a3b8]">
+                  {locale === "tr" ? "Örnek Kelimeler" : "Sample Words"}
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {activeLanguage.sampleWords.map((sw, i) => (
+                    <span
+                      key={i}
+                      className="rounded-md border border-[#fbbf24]/30 bg-[#fbbf24]/10 px-2.5 py-1 font-mono text-xs text-[#fde68a]"
+                    >
+                      {sw.word} <span className="text-white/70">({sw.gloss[locale]})</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div>
               <div className="mb-1.5 text-xs font-semibold text-[#94a3b8]">
@@ -500,8 +520,8 @@ export function LanguageTreeSection({
           </h3>
           <p className="mt-1 text-xs text-[#0f172a]/70">
             {locale === "tr"
-              ? "Aşağıdaki örnekler karşılaştırmalı inceleme içindir; her biçim aynı ölçüde yeniden yapılandırılmış değildir ve tek başına soy ağacı kanıtı sayılmaz."
-              : "Illustrative comparisons; not every form is reconstructed to the same degree, and no single row proves a genealogical branch."}
+              ? "Türk dillerinin sınıflandırılmasında kullanılan temel tanısal ses denklikleri."
+              : "Diagnostic phonological correspondences used to classify Turkic branches."}
           </p>
         </div>
 
@@ -512,7 +532,7 @@ export function LanguageTreeSection({
                 <th className="p-3 font-bold">
                   {locale === "tr" ? "Ses Ölçütü" : "Diagnostic Criterion"}
                 </th>
-                <th className="p-3 font-mono font-bold text-[#b45309]">{locale === "tr" ? "Temel / tarihî biçim" : "Base / historical form"}</th>
+                <th className="p-3 font-mono font-bold text-[#b45309]">Proto-Turkic</th>
                 <th className="p-3 font-bold">Oghur</th>
                 <th className="p-3 font-bold">Oghuz</th>
                 <th className="p-3 font-bold">Kipchak</th>
@@ -543,16 +563,96 @@ export function LanguageTreeSection({
         </div>
       </section>
 
-      <section className="rounded-2xl border border-[#e2dacb] bg-[#f2eee5] p-6 sm:p-8">
-        <div className="mb-3 text-[10px] font-bold uppercase tracking-[.24em] text-[#9a7544]">{locale === "tr" ? "Terimler ve sınıflandırma" : "Terminology & classification"}</div>
-        <h3 className="font-serif text-2xl font-semibold text-[#12232c]">{locale === "tr" ? "Lehçe, şive, ağız ve dil: aynı şey değiller." : "Language, dialect, and regional variety are not interchangeable."}</h3>
-        <p className="mt-3 max-w-4xl text-sm leading-7 text-[#536168]">{locale === "tr" ? "Türkoloji geleneğinde lehçe ve şive terimleri farklı ekollerde farklı kapsamlarla kullanılmıştır. Geleneksel okul sınıflandırmasında lehçe daha eski ayrışmış kollar, şive tarihsel dönemde ayrılan kollar, ağız ise bölgesel konuşma biçimleri için kullanılabilir. Çağdaş karşılaştırmalı dilbilimde ise Türkiye Türkçesi, Kazakça veya Çuvaşça gibi adlandırmalar, ortak Türk dilleri ailesinin üyeleri olan ayrı dilleri belirtir. Bu atlas, belirsizliği gizlemek yerine kullanılan terimi ve sınıflandırma yaklaşımını açıklar." : "Turkological traditions have used the terms for dialect and branch with different scopes. In traditional Turkish school terminology, lehçe may refer to older-diverged branches, şive to historically differentiated varieties, and ağız to regional speech forms. In contemporary comparative linguistics, names such as Turkish, Kazakh, and Chuvash denote distinct members of the Turkic language family. This atlas states which terminology and classification approach it uses rather than hiding the disagreement."}</p>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {[{tr:"Dil",en:"Language",dtr:"Tarihsel akrabalık ve yapısal özellikleriyle tanımlanan dil sistemi.",den:"A linguistic system identified through historical relationship and structure."},{tr:"Lehçe",en:"Dialect / branch",dtr:"Kullanımı ekole göre değişir; tek ve evrensel bir tanımı yoktur.",den:"Its scope varies by scholarly tradition; there is no single universal definition."},{tr:"Şive",en:"Traditional branch term",dtr:"Türkiye'deki geleneksel öğretim terminolojisinde kullanılan terim.",den:"A term used in traditional Turkish-language teaching."},{tr:"Ağız",en:"Regional variety",dtr:"Bir dilin bölgesel ses, biçim ve söz varlığı özellikleri.",den:"Regional phonological, grammatical, and lexical features of a language."}].map((item)=><div key={item.en} className="border border-[#d8d0c1] bg-[#f8f6f1] p-4"><div className="font-serif text-lg font-semibold text-[#12232c]">{locale==="tr"?item.tr:item.en}</div><p className="mt-2 text-xs leading-6 text-[#637078]">{locale==="tr"?item.dtr:item.den}</p></div>)}
-        </div>
-        <p className="mt-5 text-xs leading-6 text-[#637078]">{locale === "tr" ? "Not: Dil ile ağız arasındaki sınır yalnızca karşılıklı anlaşılabilirlikle belirlenmez; tarih, standartlaşma, kimlik ve toplumsal kullanım da etkilidir." : "Note: The boundary between a language and a dialect is not determined by mutual intelligibility alone; history, standardization, identity, and social use also matter."}</p>
-        <button type="button" onClick={()=>onNavigateToSource("tdk-tekin-2023")} className="mt-4 text-xs font-bold text-[#0e7490] underline underline-offset-4">{locale === "tr" ? "TDK terminoloji tartışmalarını incele ↗" : "Read the TDK terminology discussion ↗"}</button>
-      </section>
+      {/* Comparative Word & Etymology Laboratory */}
+      <ComparativeLexiconLab locale={locale} />
     </div>
+  );
+}
+
+function ComparativeLexiconLab({ locale }: { locale: Locale }) {
+  const [cat, setCat] = useState<ComparativeWordRow["category"] | "all">("all");
+  const rows =
+    cat === "all"
+      ? COMPARATIVE_LEXICON
+      : COMPARATIVE_LEXICON.filter((r) => r.category === cat);
+
+  const cats: { id: ComparativeWordRow["category"] | "all"; label: { tr: string; en: string } }[] = [
+    { id: "all", label: { tr: "Tümü", en: "All" } },
+    { id: "numeral", label: { tr: "Sayılar", en: "Numerals" } },
+    { id: "kinship", label: { tr: "Akrabalık", en: "Kinship" } },
+    { id: "nature", label: { tr: "Doğa", en: "Nature" } },
+    { id: "daily", label: { tr: "Günlük Yaşam", en: "Daily" } },
+    { id: "verb", label: { tr: "Fiiller", en: "Verbs" } },
+    { id: "pronoun", label: { tr: "Zamirler", en: "Pronouns" } },
+  ];
+
+  return (
+    <section className="rounded-2xl border border-[#e2dacb] bg-white p-6 shadow-sm">
+      <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+        <div>
+          <h3 className="font-serif text-xl font-bold text-[#0f172a]">
+            {locale === "tr"
+              ? "Kelime ve Etimoloji Karşılaştırma Laboratuvarı"
+              : "Comparative Lexicon & Etymology Lab"}
+          </h3>
+          <p className="mt-1 text-xs text-[#0f172a]/70">
+            {locale === "tr"
+              ? "Clauson (1972) ve Tekin (1991) etimolojik doğrulamasıyla temel sözcüklerin kollar arası düzenli ses değişimleri."
+              : "Regular cross-branch sound correspondences verified against Clauson (1972) and Tekin (1991)."}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {cats.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => setCat(c.id)}
+              className={`focus-museum rounded-lg border px-2.5 py-1 text-xs font-semibold ${
+                cat === c.id
+                  ? "border-[#0e7490] bg-[#0e7490] text-white"
+                  : "border-[#e2dacb] bg-[#f8f6f1] text-[#0f172a]"
+              }`}
+            >
+              {c.label[locale]}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[820px] border-collapse text-left text-xs">
+          <thead>
+            <tr className="border-b border-[#e2dacb] bg-[#f8f6f1] text-[#0f172a]">
+              <th className="p-2.5 font-bold">{locale === "tr" ? "Anlam" : "Gloss"}</th>
+              <th className="p-2.5 font-mono font-bold text-[#b45309]">Proto-Türkçe</th>
+              <th className="p-2.5 font-mono font-bold">Eski Türkçe</th>
+              <th className="p-2.5 font-bold">Türkçe</th>
+              <th className="p-2.5 font-bold">Azerbaycan</th>
+              <th className="p-2.5 font-bold">Kazakça</th>
+              <th className="p-2.5 font-bold">Özbekçe</th>
+              <th className="p-2.5 font-bold">Sahaca</th>
+              <th className="p-2.5 font-bold">Çuvaşça</th>
+              <th className="p-2.5 font-bold">Halaçça</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[#e2dacb]">
+            {rows.map((r) => (
+              <tr key={r.id} className="hover:bg-[#f8f6f1]/70">
+                <td className="p-2.5 font-semibold text-[#0f172a]">{r.meaning[locale]}</td>
+                <td className="p-2.5 font-mono font-semibold text-[#b45309]">{r.protoTurkic}</td>
+                <td className="p-2.5 font-mono text-[#0f172a]/85">{r.oldTurkic}</td>
+                <td className="p-2.5 font-mono text-[#0f172a]">{r.turkish}</td>
+                <td className="p-2.5 font-mono text-[#0f172a]/85">{r.azerbaijani}</td>
+                <td className="p-2.5 font-mono text-[#0f172a]/85">{r.kazakh}</td>
+                <td className="p-2.5 font-mono text-[#0f172a]/85">{r.uzbek}</td>
+                <td className="p-2.5 font-mono text-[#0f172a]/85">{r.sakha}</td>
+                <td className="p-2.5 font-mono font-semibold text-[#991b1b]">{r.chuvash}</td>
+                <td className="p-2.5 font-mono text-[#0e7490]">{r.khalaj}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 }

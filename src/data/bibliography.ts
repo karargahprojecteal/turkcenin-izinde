@@ -1,3 +1,10 @@
+export type EvidenceLevel =
+  | "primary_supported"
+  | "multi_academic"
+  | "strong_consensus"
+  | "debated"
+  | "hypothesis";
+
 export interface AcademicSource {
   id: string;
   citation: string;
@@ -7,11 +14,35 @@ export interface AcademicSource {
   url?: string;
   doi?: string;
   accessDate: string;
+  evidenceLevel: EvidenceLevel;
   supports: {
     tr: string;
     en: string;
   };
 }
+
+export const EVIDENCE_LABELS: Record<EvidenceLevel, { tr: string; en: string }> = {
+  primary_supported: {
+    tr: "Birincil Kaynakla Desteklenmiş",
+    en: "Supported by Primary Source",
+  },
+  multi_academic: {
+    tr: "Birden Fazla Akademik Kaynakla Desteklenmiş",
+    en: "Supported by Multiple Academic Sources",
+  },
+  strong_consensus: {
+    tr: "Güçlü Bilimsel Görüş",
+    en: "Strong Scholarly Consensus",
+  },
+  debated: {
+    tr: "Tartışmalı Akademik Görüş",
+    en: "Debated Scholarly View",
+  },
+  hypothesis: {
+    tr: "Yeterli Kanıt Bulunmayan Hipotez",
+    en: "Hypothesis with Limited Evidence",
+  },
+};
 
 export const ACADEMIC_SOURCES: AcademicSource[] = [
   {
@@ -21,10 +52,39 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2022",
     type: "book",
     url: "https://www.routledge.com/Routledge-Language-Family-Series/book-series/SE0091",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports: {
-      tr: "Türk dil ailesinin çağdaş sınıflandırması, coğrafi dağılımı ve 20 edebî dilin yapısal özellikleri.",
-      en: "Modern classification of the Turkic language family, geographic distribution, and structural features of 20 literary languages.",
+      tr: "Türk dil ailesinin çağdaş sınıflandırması, coğrafi dağılımı ve edebî dillerin yapısal özellikleri.",
+      en: "Modern classification of the Turkic language family, geographic distribution, and structural features.",
+    },
+  },
+  {
+    id: "golden-1992",
+    citation: "Golden, P. B. (1992). An Introduction to the History of the Turkic Peoples: Ethnogenesis and State-Formation in Medieval and Early Modern Eurasia and the Middle East. Wiesbaden: Otto Harrassowitz.",
+    authorOrInstitution: "Peter B. Golden (Harrassowitz)",
+    year: "1992",
+    type: "book",
+    url: "https://openlibrary.org/works/OL1950140W/An_introduction_to_the_history_of_the_Turkic_peoples",
+    accessDate: "2026-11-22",
+    evidenceLevel: "multi_academic",
+    supports: {
+      tr: "Türk halklarının etnogenezi, bozkır konfederasyonları, Hun–Göktürk–İslam dönemi devlet oluşumu.",
+      en: "Ethnogenesis of Turkic peoples, steppe confederations, and state formation from Xiongnu to Islamic eras.",
+    },
+  },
+  {
+    id: "clauson-1972",
+    citation: "Clauson, G. (1972). An Etymological Dictionary of Pre-Thirteenth-Century Turkish. Oxford: Clarendon Press.",
+    authorOrInstitution: "Sir Gerard Clauson (Oxford Clarendon Press)",
+    year: "1972",
+    type: "book",
+    url: "https://catalogue.nla.gov.au/catalog/2015485",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
+    supports: {
+      tr: "13. yüzyıl öncesi Türkçe söz varlığının tarihsel-etimolojik doğrulaması ve ödünç kelime ayrımı.",
+      en: "Historical-etymological verification of pre-13th-century Turkic lexicon and loanword stratification.",
     },
   },
   {
@@ -34,10 +94,81 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2004",
     type: "book",
     url: "https://brill.com/display/book/edcoll/9789004471177/BP000001.xml",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports: {
       tr: "Eski Türkçe (Orhon, Eski Uygur, Karahanlı) döneminin dilbilgisi, sesbilgisi ve yazı sistemleri.",
       en: "Grammar, phonology, and writing systems of Old Turkic (Orkhon, Old Uyghur, Karakhanid).",
+    },
+  },
+  {
+    id: "tasagil-2023",
+    citation: "Taşağıl, A. (2023). Hun, Gök Türk, Uygur Araştırmalarının Tarihi Gelişimi. İstanbul Üniversitesi Tarih Dergisi, 81.",
+    authorOrInstitution: "Ahmet Taşağıl (DergiPark / İÜ Tarih Dergisi)",
+    year: "2023",
+    type: "journal",
+    url: "https://dergipark.org.tr/tr/pub/iutarih/article/1413719",
+    accessDate: "2026-11-22",
+    evidenceLevel: "multi_academic",
+    supports: {
+      tr: "Asya Hunları, Mete Han (MÖ 209), Çin yıllıklarındaki kayıtlar ve Göktürk–Uygur tarihi araştırmaları.",
+      en: "Asian Huns (Xiongnu), Modu Chanyu (209 BCE), Chinese dynastic annals, and Göktürk–Uyghur historiography.",
+    },
+  },
+  {
+    id: "sima-qian-shiji",
+    citation: "Sima Qian (~MÖ 91). Shiji (Tarih Kayıtları / Records of the Grand Historian), Bölüm 110: Xiongnu Biyografileri (ikincil akademik değerlendirme: Brill JESH 2025).",
+    authorOrInstitution: "Sima Qian / Brill Journal of the Economic and Social History of the Orient",
+    year: "MÖ ~91 / 2025",
+    type: "journal",
+    url: "https://brill.com/view/journals/jesh/68/1-2/article-p121_5.xml?language=en",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
+    supports: {
+      tr: "Teoman, Mete Han'ın MÖ 209'da tahta çıkışı, onlu teşkilat, Han–Hun ilişkileri ve erken bozkır devlet yapısı.",
+      en: "Touman, Modu Chanyu's 209 BCE accession, decimal organization, Han–Xiongnu relations, and early steppe statehood.",
+    },
+  },
+  {
+    id: "vovin-xiongnu",
+    citation: "Vovin, A. Did the Xiongnu Speak a Yeniseian Language? (Part 2: Reexamining the Lexical Evidence). Altaist / Linguistic Studies.",
+    authorOrInstitution: "Alexander Vovin (ve E. G. Pulleyblank geleneği)",
+    year: "2000–2020",
+    type: "journal",
+    url: "https://www.altaist.org/home/confessions/a-vovin/did-the-xiongnu-speak-a-yeniseian-language-part-2-reexamining-the-lexical-evidence/",
+    accessDate: "2026-11-22",
+    evidenceLevel: "debated",
+    supports: {
+      tr: "Xiongnu yönetici tabakasının dili hakkında Yeniseyce, Proto-Türkçe ve çok dilli konfederasyon tartışmaları.",
+      en: "Debates on Xiongnu elite language (Yeniseian, Proto-Turkic, and multi-ethnic confederation hypotheses).",
+    },
+  },
+  {
+    id: "schmitt-scythian",
+    citation: "Schmitt, R. (2018/2021). Scythian Language. Encyclopaedia Iranica.",
+    authorOrInstitution: "Rüdiger Schmitt (Encyclopaedia Iranica)",
+    year: "2021",
+    type: "encyclopedia",
+    url: "https://www.iranicaonline.org/articles/scythian-language-2/",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
+    supports: {
+      tr: "İskit/Saka dilinin ağırlıklı olarak Kuzeydoğu İrani dil grubuna ait olduğu yönündeki dilbilimsel görüş.",
+      en: "Linguistic consensus classifying Scythian/Saka primarily within the Northeastern Iranian language group.",
+    },
+  },
+  {
+    id: "shimunek-vovin-tuoba",
+    citation: "Vovin, A. (2007) & Shimunek, A. (2017). Tabgaç (Tuoba) Dili Üzerine Değerlendirmeler (Serbi-Moğolca vs. Türkçe tartışması).",
+    authorOrInstitution: "Language Log / UPenn & Harrassowitz",
+    year: "2007 / 2017",
+    type: "journal",
+    url: "https://languagelog.ldc.upenn.edu/nll/?p=54658",
+    accessDate: "2026-11-22",
+    evidenceLevel: "debated",
+    supports: {
+      tr: "Kuzey Wei (Tabgaç/Tuoba) hanedanının dilinin Para-Moğolca/Serbi mi yoksa Türkçe unsurlar mı içerdiği tartışması.",
+      en: "Scholarly debate on whether Tuoba (Tabgač) was Para-Mongolic/Serbi or contained Turkic strata.",
     },
   },
   {
@@ -47,7 +178,8 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2021–2026",
     type: "encyclopedia",
     url: "https://referenceworks.brill.com/display/entries/ETLO/SIM-031966.xml",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports: {
       tr: "Oğur–Genel Türkçe ayrımı, Halaççanın (Arğu) erken ayrılışı ve Doğu/Batı Eski Türkçe ayrımı.",
       en: "Oghur–Common Turkic split, early separation of Khalaj (Arghu), and East/West Old Turkic distinction.",
@@ -60,7 +192,8 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2021–2026",
     type: "encyclopedia",
     url: "https://referenceworks.brill.com/display/entries/ETLO/SIM-032267.xml",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports: {
       tr: "Irk Bitig, Orhon-Yenisey runiform yazıtları ve Avrasya runik yazı geleneği.",
       en: "Irk Bitig, Orkhon-Yenisei runiform inscriptions, and Eurasian runiform script tradition.",
@@ -73,10 +206,25 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "1991 / 1995",
     type: "journal",
     url: "https://tdkbelleten.gov.tr/tam-metin-pdf/893/tur",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports: {
-      tr: "Türk dillerinin fonolojik ölçütlere dayalı sınıflandırması ve Tonyukuk, Kül Tigin, Bilge Kağan yazıtlarının filolojik yayını.",
-      en: "Phonological classification of Turkic languages and philological edition of the Tonyukuk, Kul Tigin, and Bilge Khagan inscriptions.",
+      tr: "Türk dillerinin fonolojik ölçütlere dayalı sınıflandırması ve Tonyukuk, Kül Tigin, Bilge Kağan yazıtlarının yayını.",
+      en: "Phonological classification of Turkic languages and philological edition of the Orkhon inscriptions.",
+    },
+  },
+  {
+    id: "sertkaya-coyr-1998",
+    citation: "Sertkaya, O. F. (1998). Die Runen-Inschrift von Çoyr. Bahşı Ögdisi (Festschrift für Klaus Röhrborn).",
+    authorOrInstitution: "Osman Fikri Sertkaya",
+    year: "1998",
+    type: "book",
+    url: "https://dergipark.org.tr/tr/download/article-file/1558236",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
+    supports: {
+      tr: "7. yüzyıl sonuna (682–691) tarihlenen Çoyr runik yazıtı ve erken Göktürk epigrafisi.",
+      en: "The late 7th-century (682–691) Choyr runic inscription and early Göktürk epigraphy.",
     },
   },
   {
@@ -86,10 +234,11 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2004",
     type: "unesco",
     url: "https://whc.unesco.org/en/list/1081/",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "Orhon Vadisi arkeolojik alanı ve 6.–8. yüzyıl bozkır anıtlarının UNESCO Dünya Mirası statüsü.",
-      en: "UNESCO World Heritage status of the Orkhon Valley archaeological landscape and 6th–8th century monuments.",
+      en: "UNESCO World Heritage status of the Orkhon Valley archaeological landscape.",
     },
   },
   {
@@ -99,34 +248,37 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2017",
     type: "unesco",
     url: "https://www.unesco.org/en/memory-world/diwan-lughat-al-turk-compendium-turkic-dialects",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "Kaşgarlı Mahmud'un Dîvânu Lugâti't-Türk eserinin 2017'de UNESCO Dünya Belleği Kütüğü'ne kaydı.",
-      en: "Inscription of Mahmud al-Kashgari's Diwan Lughat al-Turk in the UNESCO Memory of the World Register in 2017.",
+      en: "Inscription of Mahmud al-Kashgari's Diwan Lughat al-Turk in the UNESCO Memory of the World Register.",
     },
   },
   {
-    id: "unesco-kutadgu-2019",
-    citation: "UNESCO Türkiye Millî Komisyonu. (2019). Kutadgu Bilig'in Yazılışının 950. Yılı Anma Programı.",
-    authorOrInstitution: "UNESCO Türkiye Millî Komisyonu",
-    year: "2019",
-    type: "unesco",
+    id: "tdv-kutadgu-2002",
+    citation: "TDV İslâm Ansiklopedisi. (2002). KUTADGU BİLİG (ve UNESCO 2019 950. Yıl Anma Programı).",
+    authorOrInstitution: "TDV İslâm Ansiklopedisi / UNESCO",
+    year: "2002 / 2019",
+    type: "encyclopedia",
     url: "https://islamansiklopedisi.org.tr/kutadgu-bilig",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
-      tr: "Yusuf Has Hacib'in Kutadgu Bilig eserinin 1069/1070 tarihlendirmesi ve UNESCO 950. yıl anması.",
-      en: "Dating of Yusuf Khass Hajib's Kutadgu Bilig to 1069/1070 and its 950th anniversary commemoration by UNESCO.",
+      tr: "Yusuf Has Hacib'in Kutadgu Bilig eserinin 1069/1070 tarihlendirmesi ve yazma nüshaları.",
+      en: "Dating and manuscript tradition of Yusuf Khass Hajib's Kutadgu Bilig (1069/1070).",
     },
   },
   {
     id: "raschmann-2024",
     citation: "Raschmann, S.-C. (2024). Old Uyghur Buddhist Scrolls: A Case Study Based on the Säkiz Yükmäk Yaruk Scrolls. Acta Orientalia Hungarica, 77(1), 75–134.",
-    authorOrInstitution: "Simone-Christiane Raschmann (Hamburg Univ. / Acta Orientalia)",
+    authorOrInstitution: "Simone-Christiane Raschmann (Acta Orientalia)",
     year: "2024",
     type: "journal",
     doi: "10.1556/062.2024.00415",
     url: "https://real.mtak.hu/209571/1/062-article-p75.pdf",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "Berlin Turfan Koleksiyonu'ndaki yaklaşık 8.000 Eski Uygurca el yazması ve blok baskı fragmanı.",
       en: "Approximately 8,000 Old Uyghur manuscript and block print fragments in the Berlin Turfan Collection.",
@@ -139,10 +291,11 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2024",
     type: "archive",
     url: "https://www.bbaw.de/en/research/turfanforschung-turfan-studies",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
-      tr: "Turfan İpek Yolu yazmalarının dijitalleştirilmesi ve koruma arşivi.",
-      en: "Digitization and preservation archive of the Turfan Silk Road manuscripts.",
+      tr: "Turfan İpek Yolu yazmalarının (Eski Uygur, Soğd, Mani, Brahmi, Süryani) korunması.",
+      en: "Preservation of Turfan Silk Road manuscripts (Old Uyghur, Sogdian, Manichaean, Brahmi, Syriac).",
     },
   },
   {
@@ -152,7 +305,8 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2012",
     type: "encyclopedia",
     url: "https://islamansiklopedisi.org.tr/thomsen-vilhelm",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "Göktürk (Orhon-Yenisey) yazısının 1893'te Vilhelm Thomsen tarafından çözümlenmesi.",
       en: "Decipherment of the Old Turkic (Orkhon-Yenisei) script by Vilhelm Thomsen in 1893.",
@@ -165,10 +319,67 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "1993",
     type: "encyclopedia",
     url: "https://islamansiklopedisi.org.tr/cagatay-edebiyati",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports: {
       tr: "Çağatay Türkçesinin dönemleri, Ali Şîr Nevâî'nin klasikleştirici rolü ve 15.–19. yüzyıl yazı dili geleneği.",
       en: "Periods of Chagatai Turkic, Ali-Shir Nava'i's classical role, and the 15th–19th century literary tradition.",
+    },
+  },
+  {
+    id: "tdv-fuzuli-1996",
+    citation: "Karahan, A. (1996). FUZÛLÎ. TDV İslâm Ansiklopedisi, Cilt 13.",
+    authorOrInstitution: "Abdülkadir Karahan (TDV İslâm Ansiklopedisi)",
+    year: "1996",
+    type: "encyclopedia",
+    url: "https://islamansiklopedisi.org.tr/fuzuli",
+    accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
+    supports: {
+      tr: "Fuzûlî'nin Türkçe, Farsça ve Arapça divanları, Leylâ vü Mecnûn ve 16. yüzyıl Azerî–Osmanlı edebî sahası.",
+      en: "Fuzuli's trilingual literary output, Leyla and Majnun, and 16th-century Azerbaijani–Ottoman literature.",
+    },
+  },
+  {
+    id: "tdv-karahanlilar-2001",
+    citation: "Özaydın, A., & Hacıeminoğlu, N. (2001). KARAHANLILAR. TDV İslâm Ansiklopedisi.",
+    authorOrInstitution: "TDV İslâm Ansiklopedisi",
+    year: "2001",
+    type: "encyclopedia",
+    url: "https://islamansiklopedisi.org.tr/karahanlilar",
+    accessDate: "2026-11-22",
+    evidenceLevel: "multi_academic",
+    supports: {
+      tr: "Karahanlı devlet teşkilatı, İslami dönem ilk Türk yazı dili ve edebî eserleri.",
+      en: "Karakhanid state structure and the earliest Islamic Turkic literary works.",
+    },
+  },
+  {
+    id: "tdv-gazneliler-1996",
+    citation: "Merçil, E. (1996). GAZNELİLER. TDV İslâm Ansiklopedisi, Cilt 13.",
+    authorOrInstitution: "Erdoğan Merçil (TDV İslâm Ansiklopedisi)",
+    year: "1996",
+    type: "encyclopedia",
+    url: "https://islamansiklopedisi.org.tr/gazneliler",
+    accessDate: "2026-11-22",
+    evidenceLevel: "multi_academic",
+    supports: {
+      tr: "Gazneliler Devleti'nin siyasi tarihi ve saraydaki Farsça edebiyat ile Türkçe konuşma ortamı ayrımı.",
+      en: "Ghaznavid political history and the distinction between Persian court literature and Turkic speech.",
+    },
+  },
+  {
+    id: "tdv-selcuklular-2009",
+    citation: "Sümer, F., & Sevim, A. (2009). SELÇUKLULAR. TDV İslâm Ansiklopedisi.",
+    authorOrInstitution: "TDV İslâm Ansiklopedisi",
+    year: "2009",
+    type: "encyclopedia",
+    url: "https://islamansiklopedisi.org.tr/selcuklular",
+    accessDate: "2026-11-22",
+    evidenceLevel: "multi_academic",
+    supports: {
+      tr: "Büyük Selçuklu ve Anadolu Selçuklu dönemlerinde Oğuz göçleri ve Eski Anadolu Türkçesinin doğuşu.",
+      en: "Oghuz migrations under the Great Seljuks and the emergence of Old Anatolian Turkish.",
     },
   },
   {
@@ -178,10 +389,11 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2011",
     type: "journal",
     url: "https://www.cambridge.org/core/journals/international-journal-of-middle-east-studies/article/learning-to-read-again-the-social-experiences-of-turkeys-1928-alphabet-reform/F313C1942EB18220E9FD9B2B417D5601",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "1 Kasım 1928 Harf Devrimi ve Millet Mektepleri üzerinden toplumsal okuryazarlık dönüşümü.",
-      en: "The November 1, 1928 Turkish Alphabet Reform and social literacy transformation via Nation's Schools.",
+      en: "The November 1, 1928 Turkish Alphabet Reform and social literacy transformation.",
     },
   },
   {
@@ -191,7 +403,8 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2024",
     type: "archive",
     url: "https://vekam.ku.edu.tr/en/alphabet-and-press-alphabet-reform-and-press-regime-in-turkiye-1928-1939/",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "1928–1939 döneminde Türkiye'de alfabe reformu ve matbuat uygulamaları.",
       en: "Alphabet reform and press practices in Türkiye during 1928–1939.",
@@ -204,10 +417,25 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     year: "2023",
     type: "journal",
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10432883/",
-    accessDate: "2026-11-21",
+    accessDate: "2026-11-22",
+    evidenceLevel: "debated",
     supports: {
-      tr: "Proto-Türkçenin kuramsal zaman derinliği (~2000 yıl iç rekonstrüksiyon) ve Batı Moğolistan/bozkır temasları.",
-      en: "Theoretical time depth of Proto-Turkic (~2,000 years internal reconstruction) and western Mongolia/steppe contacts.",
+      tr: "Proto-Türkçenin kuramsal zaman derinliği ve Transavrasya/Altay temas hipotezleri üzerine tartışmalar.",
+      en: "Theoretical time depth of Proto-Turkic and debates around Transeurasian/Altaic contact hypotheses.",
+    },
+  },
+  {
+    id: "ldd-karagash-2025",
+    citation: "Language Documentation & Description (2025). Karagash (Astrakhan, Russia) — Language Snapshot & Glottolog turk1311 references.",
+    authorOrInstitution: "LDD Journal / Glottolog",
+    year: "2025",
+    type: "journal",
+    url: "https://www.lddjournal.org/article/pubid/330/",
+    accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
+    supports: {
+      tr: "Küçük konuşurlu ve tehlike altındaki Türk dillerinin (Karagaş Nogaycası vb.) belgelenmesi.",
+      en: "Documentation of small and endangered Turkic varieties.",
     },
   },
   {

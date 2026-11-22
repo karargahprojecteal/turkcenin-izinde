@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Locale, UI_COPY } from "@/data/i18n";
 import { ALPHABET_SYSTEMS, AlphabetSystem } from "@/data/alphabets";
+import { RUNIC_INSCRIPTIONS } from "@/data/inscriptions";
 import { ACADEMIC_SOURCES } from "@/data/bibliography";
 
 interface ScriptLabSectionProps {
@@ -331,6 +332,66 @@ export function ScriptLabSection({
                 <p className="mt-1.5 text-xs leading-relaxed text-[#0f172a]/75">
                   {g.note[locale]}
                 </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Orkhon, Yenisei, Choyr & Talas Inscriptions Archive */}
+      <section className="rounded-2xl border border-[#e2dacb] bg-white p-6 shadow-sm">
+        <div className="mb-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#b45309]">
+            {locale === "tr" ? "Epigrafi Arşivi" : "Epigraphic Archive"}
+          </span>
+          <h3 className="mt-1 font-serif text-xl font-bold text-[#0f172a]">
+            {locale === "tr"
+              ? "Orhun, Yenisey, Çoyr ve Talas Runik Yazıtları"
+              : "Orkhon, Yenisei, Choyr & Talas Runic Inscriptions"}
+          </h3>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {RUNIC_INSCRIPTIONS.map((ins) => (
+            <div
+              key={ins.id}
+              className="flex flex-col justify-between rounded-xl border border-[#e2dacb] bg-[#f8f6f1] p-4"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2 text-[11px] font-mono text-[#0e7490]">
+                  <span>{ins.date}</span>
+                  <span>{ins.location[locale]}</span>
+                </div>
+                <h4 className="mt-1 font-serif text-lg font-bold text-[#0f172a]">
+                  {ins.name[locale]}
+                </h4>
+                <p className="mt-1.5 text-xs leading-relaxed text-[#0f172a]/80">
+                  {ins.historicalContent[locale]}
+                </p>
+                <div className="mt-2.5 rounded-lg bg-[#0f172a] p-2.5 text-xs text-[#f8f6f1]">
+                  <div className="font-mono text-[#7dd3fc]">{ins.excerptTransliteration}</div>
+                  <div className="mt-1 text-[11px] text-[#cbd5e1]">
+                    “{ins.excerptTranslation[locale]}”
+                  </div>
+                </div>
+              </div>
+              <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#e2dacb] pt-2.5 text-[11px] text-[#0f172a]/70">
+                <span>{ins.authorOrPatron[locale]}</span>
+                <div className="flex flex-wrap gap-1">
+                  {ins.sourceIds.map((srcId) => {
+                    const src = ACADEMIC_SOURCES.find((s) => s.id === srcId);
+                    if (!src) return null;
+                    return (
+                      <button
+                        key={src.id}
+                        type="button"
+                        onClick={() => onNavigateToSource(src.id)}
+                        className="focus-museum rounded border border-[#e2dacb] bg-white px-2 py-0.5 font-medium text-[#0f172a] hover:border-[#0e7490] hover:text-[#0e7490]"
+                      >
+                        {src.authorOrInstitution}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           ))}

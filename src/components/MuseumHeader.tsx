@@ -13,6 +13,8 @@ import {
   Menu,
   X,
   Globe,
+  Crown,
+  Feather,
 } from "lucide-react";
 import { Locale, UI_COPY } from "@/data/i18n";
 import { OrkhonEmblemSvg } from "./OrkhonVectorGlyphs";
@@ -28,14 +30,20 @@ interface MuseumHeaderProps {
   setMobileMenuOpen: (open: boolean) => void;
 }
 
-const NAV_ITEMS: { id: SectionId; icon: React.ComponentType<{ className?: string }> }[] = [
-  { id: "home", icon: Compass },
-  { id: "timeline", icon: Clock },
-  { id: "tree", icon: GitBranch },
-  { id: "alphabets", icon: Languages },
-  { id: "atlas", icon: MapIcon },
-  { id: "artifacts", icon: Landmark },
-  { id: "sources", icon: BookOpen },
+const NAV_ITEMS: {
+  id: SectionId;
+  labelKey: keyof (typeof UI_COPY)["tr"]["nav"];
+  icon: React.ComponentType<{ className?: string }>;
+}[] = [
+  { id: "home", labelKey: "home", icon: Compass },
+  { id: "early-states", labelKey: "earlyStates", icon: Crown },
+  { id: "timeline", labelKey: "timeline", icon: Clock },
+  { id: "tree", labelKey: "tree", icon: GitBranch },
+  { id: "alphabets", labelKey: "alphabets", icon: Languages },
+  { id: "atlas", labelKey: "atlas", icon: MapIcon },
+  { id: "literature", labelKey: "literature", icon: Feather },
+  { id: "artifacts", labelKey: "artifacts", icon: Landmark },
+  { id: "sources", labelKey: "sources", icon: BookOpen },
 ];
 
 export function MuseumHeader({
@@ -90,7 +98,7 @@ export function MuseumHeader({
             aria-label={locale === "tr" ? "Ana Gezinti" : "Primary Navigation"}
             className="hidden items-center gap-1 lg:flex"
           >
-            {NAV_ITEMS.map(({ id, icon: Icon }) => {
+            {NAV_ITEMS.map(({ id, labelKey, icon: Icon }) => {
               const isActive = activeSection === id;
               return (
                 <button
@@ -109,7 +117,7 @@ export function MuseumHeader({
                       isActive ? "text-[#38bdf8]" : "text-[#0e7490]"
                     }`}
                   />
-                  <span>{copy.nav[id]}</span>
+                  <span>{copy.nav[labelKey]}</span>
                 </button>
               );
             })}
@@ -172,7 +180,7 @@ export function MuseumHeader({
             aria-label={locale === "tr" ? "Mobil Gezinti" : "Mobile Navigation"}
             className="grid grid-cols-2 gap-2"
           >
-            {NAV_ITEMS.map(({ id, icon: Icon }) => {
+            {NAV_ITEMS.map(({ id, labelKey, icon: Icon }) => {
               const isActive = activeSection === id;
               return (
                 <button
@@ -194,7 +202,7 @@ export function MuseumHeader({
                       isActive ? "text-[#38bdf8]" : "text-[#0e7490]"
                     }`}
                   />
-                  <span>{copy.nav[id]}</span>
+                  <span>{copy.nav[labelKey]}</span>
                 </button>
               );
             })}

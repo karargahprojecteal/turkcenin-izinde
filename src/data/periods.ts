@@ -163,7 +163,7 @@ export const HISTORICAL_PERIODS: HistoricalPeriod[] = [
       tr: "Dîvânu Lugâti't-Türk 2017'de UNESCO Dünya Belleği Kütüğü'ne alınmıştır.",
       en: "Diwan Lughat al-Turk was inscribed in the UNESCO Memory of the World Register in 2017.",
     },
-    sourceIds: ["unesco-diwan-2017", "unesco-kutadgu-2019", "erdal-2004"],
+    sourceIds: ["unesco-diwan-2017", "tdv-kutadgu-2002", "erdal-2004"],
   },
   {
     id: "khwarazmian",

@@ -10,6 +10,8 @@ import { ScriptLabSection } from "@/components/ScriptLabSection";
 import { GeographicAtlasSection } from "@/components/GeographicAtlasSection";
 import { ArtifactGallerySection } from "@/components/ArtifactGallerySection";
 import { BibliographySection } from "@/components/BibliographySection";
+import { EarlyHistoryStatesSection } from "@/components/EarlyHistoryStatesSection";
+import { LiteratureSection } from "@/components/LiteratureSection";
 import { GlobalSearchModal } from "@/components/GlobalSearchModal";
 import { SectionId } from "@/components/types";
 
@@ -89,6 +91,13 @@ export default function HomePage() {
           <OverviewSection locale={locale} onNavigate={navigateToSection} onNavigateToPeriod={navigateToPeriod} />
         )}
 
+        {activeSection === "early-states" && (
+          <EarlyHistoryStatesSection
+            locale={locale}
+            onNavigateToSource={navigateToSource}
+          />
+        )}
+
         {activeSection === "timeline" && (
           <TimelineSection
             locale={locale}
@@ -122,6 +131,13 @@ export default function HomePage() {
             locale={locale}
             onNavigateToPeriod={navigateToPeriod}
             onNavigateToBranch={navigateToBranch}
+          />
+        )}
+
+        {activeSection === "literature" && (
+          <LiteratureSection
+            locale={locale}
+            onNavigateToSource={navigateToSource}
           />
         )}
 
