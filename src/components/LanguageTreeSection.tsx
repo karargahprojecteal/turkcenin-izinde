@@ -500,8 +500,8 @@ export function LanguageTreeSection({
           </h3>
           <p className="mt-1 text-xs text-[#0f172a]/70">
             {locale === "tr"
-              ? "Türk dillerinin sınıflandırılmasında kullanılan temel tanısal ses denklikleri."
-              : "Diagnostic phonological correspondences used to classify Turkic branches."}
+              ? "Aşağıdaki örnekler karşılaştırmalı inceleme içindir; her biçim aynı ölçüde yeniden yapılandırılmış değildir ve tek başına soy ağacı kanıtı sayılmaz."
+              : "Illustrative comparisons; not every form is reconstructed to the same degree, and no single row proves a genealogical branch."}
           </p>
         </div>
 
@@ -512,7 +512,7 @@ export function LanguageTreeSection({
                 <th className="p-3 font-bold">
                   {locale === "tr" ? "Ses Ölçütü" : "Diagnostic Criterion"}
                 </th>
-                <th className="p-3 font-mono font-bold text-[#b45309]">Proto-Turkic</th>
+                <th className="p-3 font-mono font-bold text-[#b45309]">{locale === "tr" ? "Temel / tarihî biçim" : "Base / historical form"}</th>
                 <th className="p-3 font-bold">Oghur</th>
                 <th className="p-3 font-bold">Oghuz</th>
                 <th className="p-3 font-bold">Kipchak</th>
