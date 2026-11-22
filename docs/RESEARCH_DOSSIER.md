@@ -140,5 +140,6 @@ Sınırlılıklar:
 14. The Unicode Consortium. (2024). *The Unicode Standard, Version 16.0*, Chapter 14.8: Old Turkic.
 15. Türk Dil Kurumu. Tekin, T. (2023). *Makaleler III: Çağdaş Türk Dilleri*.
 16. Türk Dil Kurumu. (1997). *Ağız Araştırmaları Bilgi Şöleni*.
-17. Eraslan, K. (1993). “Çağatay Edebiyatı.” *TDV İslâm Ansiklopedisi*.
-18. Yılmaz, H. (2011). “Learning to Read (Again): The Social Experiences of Turkey's 1928 Alphabet Reform.” *International Journal of Middle East Studies*.
+17. Yıldırım, F., & Çapa, G. N. (2022). “Atebetü’l-Hakâyık’ın Eski Uygur Harfli Semerkand Nüshasının Paleografik İncelenmesi.” *Korkut Ata Türkiyat Araştırmaları Dergisi*, 8, 56–103. https://doi.org/10.51531/korkutataturkiyat.1123528
+18. Eraslan, K. (1993). “Çağatay Edebiyatı.” *TDV İslâm Ansiklopedisi*.
+19. Yılmaz, H. (2011). “Learning to Read (Again): The Social Experiences of Turkey's 1928 Alphabet Reform.” *International Journal of Middle East Studies*.
