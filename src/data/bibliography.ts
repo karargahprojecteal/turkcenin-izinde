@@ -244,5 +244,88 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     authorOrInstitution:"Gernot L. Windfuhr · Encyclopaedia Iranica", year:"2006 / 2016", type:"encyclopedia",
     url:"https://www.iranicaonline.org/articles/iran-vii7-turkic-languages/", accessDate:"2026-11-22",
     supports:{tr:"İran'daki Oğuz Türkçesi çeşitleri; Horasan Türkçesi, Kaşkayca ve Halaççanın farklı konumları.",en:"Oghuz Turkic varieties in Iran, including Khorasan Turkic, Qashqai, and the distinct position of Khalaj."}
-  }
+  },
+  {
+    id: "johanson-2020-classification",
+    citation: "Johanson, L. (2020). The classification of the Turkic languages. In M. Robbeets & A. Savelyev (Eds.), The Oxford Guide to the Transeurasian Languages (pp. 105–114). Oxford University Press. https://doi.org/10.1093/oso/9780198804628.003.0009.",
+    authorOrInstitution: "Lars Johanson · Oxford University Press",
+    year: "2020",
+    type: "book",
+    url: "https://academic.oup.com/book/41762/chapter-abstract/354235382",
+    doi: "10.1093/oso/9780198804628.003.0009",
+    accessDate: "2026-11-22",
+    supports: {
+      tr: "Türk dillerinin soy sınıflandırmasında dil/lehçe ayrımı, göç, yakınsama ve temas etkileri.",
+      en: "Genealogical classification, language/dialect distinctions, migration, convergence, and contact effects in Turkic.",
+    },
+  },
+  {
+    id: "unicode-old-turkic-2024",
+    citation: "The Unicode Consortium. (2026). The Unicode Standard, Version 18.0, Chapters 14.8 (Old Turkic) and 14.10 (Sogdian).",
+    authorOrInstitution: "The Unicode Consortium",
+    year: "2026",
+    type: "archive",
+    url: "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-14/",
+    accessDate: "2026-11-22",
+    supports: {
+      tr: "Eski Türk ve Soğd yazılarının Unicode kod aralıkları, tarihî tanıklıkları ve yazı özelliklerine ilişkin teknik bilgiler.",
+      en: "Unicode encoding, historical attestations, and technical details of the Old Turkic and Sogdian scripts.",
+    },
+  },
+  {
+    id: "iranica-codex-cumanicus-1992",
+    citation: "MacKenzie, D. N. (1992; updated 2013). Codex Cumanicus. Encyclopaedia Iranica, V(8), 885–886.",
+    authorOrInstitution: "David Neil MacKenzie · Encyclopaedia Iranica",
+    year: "1992 / 2013",
+    type: "encyclopedia",
+    url: "https://www.iranicaonline.org/articles/codex-cumanicus/",
+    accessDate: "2026-11-22",
+    supports: {
+      tr: "Codex Cumanicus'un yazma özellikleri, Kuman-Kıpçak dil malzemesi, Latin yazısı ve tarihsel bağlamı.",
+      en: "Manuscript features, Cuman-Kipchak linguistic material, Latin script, and historical context of the Codex Cumanicus.",
+    },
+  },
+  {
+    id: "unesco-dede-qorqud-2018",
+    citation: "UNESCO. (2018). Heritage of Dede Qorqud/Korkyt Ata/Dede Korkut, Epic Culture, Folk Tales and Music. Representative List of the Intangible Cultural Heritage of Humanity.",
+    authorOrInstitution: "UNESCO · Intangible Cultural Heritage",
+    year: "2018",
+    type: "unesco",
+    url: "https://ich.unesco.org/en/RL/heritage-of-dede-qorqud-korkyt-ata-dede-korkut-epic-culture-folk-tales-and-music-01399",
+    accessDate: "2026-11-22",
+    supports: {
+      tr: "Dede Korkut anlatı geleneğinin yaşayan aktarımı, sözlü-yazılı kültür ilişkisi ve 2018 UNESCO kaydı.",
+      en: "Living transmission, oral-written culture relationship, and the 2018 UNESCO inscription of the Dede Qorqud tradition.",
+    },
+  },
+  {
+    id: "tdk-agiz-arastirmalari-1997",
+    citation: "Türk Dil Kurumu. (1997). Ağız Araştırmaları Bilgi Şöleni: Tartışma ve değerlendirmeler.",
+    authorOrInstitution: "Türk Dil Kurumu",
+    year: "1997",
+    type: "archive",
+    url: "https://tdk.gov.tr/wp-content/uploads/2024/10/Agiz-Arastirmalari-Bilgi-Soleni-9-Mayis-1997.pdf",
+    accessDate: "2026-11-22",
+    supports: {
+      tr: "Ağız, şive ve lehçe terimlerinin Türkoloji içindeki kullanımlarına dair bilimsel tartışmalar.",
+      en: "Scholarly discussion of the terms dialect, regional variety, and speech variety in Turkology.",
+    },
+  },
+
+
+  {
+    id: "yildirim-capa-2022-atebet",
+    citation: "Yıldırım, F., & Çapa, G. N. (2022). Atebetü’l-Hakâyık’ın Eski Uygur Harfli Semerkand Nüshasının Paleografik İncelenmesi. Korkut Ata Türkiyat Araştırmaları Dergisi, 8, 56–103. https://doi.org/10.51531/korkutataturkiyat.1123528.",
+    authorOrInstitution: "Fikret Yıldırım & Gizem Nur Çapa · Korkut Ata Türkiyat Araştırmaları Dergisi",
+    year: "2022",
+    type: "journal",
+    url: "https://dergipark.org.tr/tr/pub/korkutataturkiyat/article/1123528",
+    doi: "10.51531/korkutataturkiyat.1123528",
+    accessDate: "2026-11-22",
+    supports: {
+      tr: "Atebetü’l-Hakâyık'ın Karahanlı dönemi eseri oluşu, 12. yüzyıla tarihlendirilmesi ve Eski Uygur harfli Semerkand nüshasının paleografisi.",
+      en: "Karakhanid-period context, 12th-century dating, and palaeography of the Old Uyghur-script Samarkand copy of Atebetü’l-Hakâyık.",
+    },
+  },
+
 ];

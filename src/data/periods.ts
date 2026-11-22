@@ -105,7 +105,7 @@ export const HISTORICAL_PERIODS: HistoricalPeriod[] = [
     subtitle: { tr: "İpek Yolu Çok Alfabeli Yazma ve Çeviri Geleneği", en: "Silk Road Multi-Script Manuscript & Translation Tradition" },
     region: { tr: "Ötüken, Turfan (Koço), Dunhuang, Kansu", en: "Ötüken, Turfan (Qocho), Dunhuang, Gansu" },
     coordinates: { lat: 42.95, lng: 89.19 },
-    scripts: ["old-uyghur", "gokturk-runic", "brahmi", "manichaean", "syriac"],
+    scripts: ["old-uyghur", "sogdian", "gokturk-runic", "brahmi", "manichaean", "syriac"],
     keyWorks: ["Irk Bitig (10. yy.)", "Altun Yaruk", "Säkiz Yükmäk Yaruk", "Kalyanamkara ve Papamkara"],
     linguisticHighlights: {
       tr: [
