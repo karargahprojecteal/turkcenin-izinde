@@ -40,7 +40,7 @@
 - **Anlam:** "Batı Türkistan runiform yazı geleneği tanıklığı."
 
 
-## B. Birincil Epigrafik ve Yazma Eserler (9 Eser)
+## B. Birincil Epigrafik ve Yazma Eserler (11 Eser)
 - **1. Kül Tigin Yazıtı** (732) — Koşo Çaydam, Orhon Vadisi (Moğolistan) | *Arşiv:* Orhon Vadisi Müzesi / Yerinde Koruma
 - **2. Tonyukuk Yazıtı** (~720–726) — Bayn Tsokto (Moğolistan) | *Arşiv:* Yerinde Anıt Alanı
 - **3. Irk Bitig (Fal Kitabı)** (9.–10. Yüzyıl) — Dunhuang, Bin Buda Mağaraları | *Arşiv:* British Library (Or. 8212/161)
@@ -50,6 +50,8 @@
 - **7. Codex Cumanicus** (13.–14. Yüzyıl) — Kırım / Deşt-i Kıpçak | *Arşiv:* Biblioteca Nazionale Marciana (Venedik)
 - **8. Muhâkemetü'l-Lugateyn** (1499) — Herat (Ali Şîr Nevâî) | *Arşiv:* Süleymaniye / Topkapı / Tahran Nüshaları
 - **9. 1928 Türk Harfleri Kanunu ve Millet Mektepleri** (1 Kasım 1928) — Ankara / Türkiye Cumhuriyeti | *Arşiv:* TBMM Arşivi / VEKAM Koleksiyonu
+- **10. Dede Korkut Kitabı (Kitâb-ı Dedem Korkud)** (Yazma nüshalar: 15. yüzyıl) — Oğuz anlatı çevresi · Anadolu ve Azerbaycan | *Arşiv:* Dresden ve Vatikan yazma nüshaları
+- **11. Atebetü’l-Hakâyık** (Eser: 12. yüzyıl (tahmin) · Semerkand nüshası: 1444) — Yüknek – Semerkand | *Arşiv:* Süleymaniye Yazma Eser Kütüphanesi, Ayasofya 4012 (Semerkand nüshası)
 
 ## C. Edebiyat Tarihi Başyapıtları (6 Seçki)
 - **1. Atabetü'l-Hakayık** — Edib Ahmed Yüknekî (12. Yüzyıl) | Karahanlı Türkçesi | Ayasofya, Topkapı ve Semerkant nüshaları

@@ -14,7 +14,7 @@ export interface AcademicSource {
   url?: string;
   doi?: string;
   accessDate: string;
-  evidenceLevel: EvidenceLevel;
+  evidenceLevel?: EvidenceLevel;
   supports: {
     tr: string;
     en: string;

@@ -131,7 +131,7 @@ fs.writeFileSync(
 | :---: | :--- | :--- | :---: | :--- | :--- | :--- |
 ${ACADEMIC_SOURCES.map(
   (s, i) =>
-    `| ${i + 1} | \`${s.id}\` | ${s.authorOrInstitution} | ${s.year} | ${EVIDENCE_LABELS[s.evidenceLevel].tr} | ${s.citation} | ${s.doi ? `DOI: ${s.doi}` : s.url || "-"} |`
+    `| ${i + 1} | \`${s.id}\` | ${s.authorOrInstitution} | ${s.year} | ${EVIDENCE_LABELS[s.evidenceLevel || "multi_academic"].tr} | ${s.citation} | ${s.doi ? `DOI: ${s.doi}` : s.url || "-"} |`
 ).join("\n")}
 `
 );
@@ -410,7 +410,7 @@ ${[
         <td>${esc(s.dateRange)}</td>
         <td>${esc(s.geography.tr)}</td>
         <td>${esc(s.linguisticHeritage.tr)}<br/><em>Kaynaklar: ${esc(s.writtenSources.tr)}</em></td>
-        <td><span class="badge">${esc(EVIDENCE_LABELS[s.evidenceLevel].tr)}</span></td>
+        <td><span class="badge">${esc(EVIDENCE_LABELS[s.evidenceLevel || "multi_academic"].tr)}</span></td>
       </tr>`
     ).join("\n")}
   </tbody>
@@ -622,7 +622,7 @@ ${[
       (s, i) => `<tr>
         <td>${i + 1}</td>
         <td>${esc(s.citation)}</td>
-        <td>${esc(EVIDENCE_LABELS[s.evidenceLevel].tr)}</td>
+        <td>${esc(EVIDENCE_LABELS[s.evidenceLevel || "multi_academic"].tr)}</td>
         <td style="word-break:break-all;font-size:7pt">${esc(s.doi ? `DOI: ${s.doi}` : s.url || "-")}</td>
       </tr>`
     ).join("\n")}
