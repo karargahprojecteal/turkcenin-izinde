@@ -111,7 +111,6 @@ export const TURKIC_BRANCHES: TurkicBranch[] = [
         speakersApprox: "~150 bin",
         keyFeature: { tr: "Slav ve Balkan dilleriyle sözdizimsel temas izleri taşır.", en: "Shows syntactic contact features with Slavic and Balkan languages." },
       },
-,
       { id:"khorasan-turkish", name:{tr:"Horasan Türkçesi",en:"Khorasan Turkic"}, nativeName:"Türkī / ترکی", status:"living", currentScripts:["Arap (yaygın tarihsel kullanım)"], region:{tr:"Kuzeydoğu İran · Horasan",en:"Northeastern Iran · Khorasan"}, keyFeature:{tr:"Oğuz temelli; bölgesel çeşitleri ve Farsça temas özellikleri bulunur.",en:"Oghuz-based, with regional varieties and Persian contact features."} },
       { id:"qashqai", name:{tr:"Kaşkayca",en:"Qashqai"}, nativeName:"Qaşqay türkcəsi", status:"living", currentScripts:["Arap (değişken yazım)"], region:{tr:"Güney İran · Fars ve çevresi",en:"Southern Iran · Fars and surrounding areas"}, keyFeature:{tr:"Güney Oğuz çeşitleri içinde değerlendirilir; yazı standardı sınırlıdır.",en:"Classified among Southern Oghuz varieties; standardization is limited."} }
     ],
@@ -181,7 +180,6 @@ export const TURKIC_BRANCHES: TurkicBranch[] = [
         speakersApprox: "~500 bin",
         keyFeature: { tr: "Kıpçak tabanı üzerinde Oğuz etkili karma lehçe yapısı.", en: "Kipchak foundation with strong Oghuz coastal influence." },
       },
-,
       { id:"karakalpak", name:{tr:"Karakalpakça",en:"Karakalpak"}, nativeName:"Qaraqalpaq tili", status:"living", currentScripts:["Kiril","Latin (geçiş / kullanım alanına göre)"], region:{tr:"Karakalpakistan · Özbekistan",en:"Karakalpakstan · Uzbekistan"}, keyFeature:{tr:"Kazakça ve Nogaycayla yakın Güney Kıpçak özellikleri taşır.",en:"Shares South Kipchak features and close ties with Kazakh and Nogai."} },
       { id:"nogai", name:{tr:"Nogayca",en:"Nogai"}, nativeName:"Ногай тили", status:"living", currentScripts:["Kiril"], region:{tr:"Kuzey Kafkasya · Aşağı Volga",en:"North Caucasus · Lower Volga"}, keyFeature:{tr:"Kazakça ve Karakalpakçayla tarihsel ve yapısal yakınlık gösterir.",en:"Historically and structurally close to Kazakh and Karakalpak."} },
       { id:"kumyk", name:{tr:"Kumukça",en:"Kumyk"}, nativeName:"Къумукъ тил", status:"living", currentScripts:["Kiril"], region:{tr:"Dağıstan · Kuzeydoğu Kafkasya",en:"Dagestan · Northeastern Caucasus"}, keyFeature:{tr:"Kuzey Kafkasya'nın tarihî yazı dillerinden biridir.",en:"One of the historical literary languages of the North Caucasus."} },
@@ -271,7 +269,6 @@ export const TURKIC_BRANCHES: TurkicBranch[] = [
         speakersApprox: "~50 bin",
         keyFeature: { tr: "Yenisey havzası; Eski Türkçe d > z değişimi (azax).", en: "Yenisei basin; Old Turkic d > z shift (azax)." },
       },
-,
       { id:"altai", name:{tr:"Altayca",en:"Altai"}, nativeName:"Алтай тил", status:"living", currentScripts:["Kiril"], region:{tr:"Altay Cumhuriyeti ve çevresi · Güney Sibirya",en:"Altai Republic and surroundings · South Siberia"}, keyFeature:{tr:"Kuzey ve Güney Altay çeşitleri iç sınıflandırmada ayrılır.",en:"Northern and Southern Altai varieties are distinguished in internal classifications."} },
       { id:"shor", name:{tr:"Şorca",en:"Shor"}, nativeName:"Шор тили", status:"living", currentScripts:["Kiril"], region:{tr:"Kemerovo · Güney Sibirya",en:"Kemerovo · South Siberia"}, keyFeature:{tr:"Hakas ve diğer Güney Sibirya Türk dilleriyle temas ve ortaklıklar taşır.",en:"Shares features and contact history with Khakas and other South Siberian Turkic languages."} },
       { id:"dolgan", name:{tr:"Dolganca",en:"Dolgan"}, nativeName:"Долган тыла", status:"living", currentScripts:["Kiril"], region:{tr:"Taymır Yarımadası · Kuzey Sibirya",en:"Taymyr Peninsula · North Siberia"}, keyFeature:{tr:"Sahaca ile yakın ilişkili Kuzey Sibirya Türk dilidir.",en:"A North Siberian Turkic language closely related to Sakha."} },
