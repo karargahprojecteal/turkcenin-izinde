@@ -34,9 +34,9 @@ Ana ürün yönü: **05 — Hybrid / Nexus Historia**. Önceki konsept değerlen
 ## Dallar
 
 - concept/01-chronos
-- concept/02-archive
-- concept/03-atlas
-- concept/04-script
+- concept/02-turkic-atlas
+- concept/03-script-museum
+- concept/04-language-tree
 - concept/05-hybrid
 
 Bu konsept dalları tarihî tasarım denemeleridir; güncel ürünün kaynaklı veri tabanı ve etkileşim davranışları ayrıca test edilmelidir.
