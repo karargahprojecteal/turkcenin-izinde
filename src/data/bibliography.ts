@@ -209,7 +209,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
       tr: "Proto-Türkçenin kuramsal zaman derinliği (~2000 yıl iç rekonstrüksiyon) ve Batı Moğolistan/bozkır temasları.",
       en: "Theoretical time depth of Proto-Turkic (~2,000 years internal reconstruction) and western Mongolia/steppe contacts.",
     },
-  },,
+  },
   {
     id:"savelyev-robbeets-2020",
     citation:"Savelyev, A., & Robbeets, M. (2020). Bayesian phylolinguistics infers the internal structure and the time-depth of the Turkic language family. Journal of Language Evolution, 5(1), 39–53. https://doi.org/10.1093/jole/lzz010.",
