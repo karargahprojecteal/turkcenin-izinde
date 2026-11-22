@@ -312,7 +312,11 @@ export function LanguageTreeSection({
               style={{ backgroundColor: activeBranch.colorToken }}
             >
               <GitBranch className="h-3.5 w-3.5" />
-              {activeBranch.macroGroup === "oghur"
+              {activeBranch.id === "arghu"
+                ? locale === "tr"
+                  ? "Erken Ayrışan Dal · Konumu Tartışmalı"
+                  : "Early-Diverging Branch · Placement Debated"
+                : activeBranch.macroGroup === "oghur"
                 ? locale === "tr"
                   ? "Oğur Ana Kolu"
                   : "Oghur Macro-Group"
@@ -537,6 +541,17 @@ export function LanguageTreeSection({
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="rounded-2xl border border-[#e2dacb] bg-[#f2eee5] p-6 sm:p-8">
+        <div className="mb-3 text-[10px] font-bold uppercase tracking-[.24em] text-[#9a7544]">{locale === "tr" ? "Terimler ve sınıflandırma" : "Terminology & classification"}</div>
+        <h3 className="font-serif text-2xl font-semibold text-[#12232c]">{locale === "tr" ? "Lehçe, şive, ağız ve dil: aynı şey değiller." : "Language, dialect, and regional variety are not interchangeable."}</h3>
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-[#536168]">{locale === "tr" ? "Türkoloji geleneğinde lehçe ve şive terimleri farklı ekollerde farklı kapsamlarla kullanılmıştır. Geleneksel okul sınıflandırmasında lehçe daha eski ayrışmış kollar, şive tarihsel dönemde ayrılan kollar, ağız ise bölgesel konuşma biçimleri için kullanılabilir. Çağdaş karşılaştırmalı dilbilimde ise Türkiye Türkçesi, Kazakça veya Çuvaşça gibi adlandırmalar, ortak Türk dilleri ailesinin üyeleri olan ayrı dilleri belirtir. Bu atlas, belirsizliği gizlemek yerine kullanılan terimi ve sınıflandırma yaklaşımını açıklar." : "Turkological traditions have used the terms for dialect and branch with different scopes. In traditional Turkish school terminology, lehçe may refer to older-diverged branches, şive to historically differentiated varieties, and ağız to regional speech forms. In contemporary comparative linguistics, names such as Turkish, Kazakh, and Chuvash denote distinct members of the Turkic language family. This atlas states which terminology and classification approach it uses rather than hiding the disagreement."}</p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[{tr:"Dil",en:"Language",dtr:"Tarihsel akrabalık ve yapısal özellikleriyle tanımlanan dil sistemi.",den:"A linguistic system identified through historical relationship and structure."},{tr:"Lehçe",en:"Dialect / branch",dtr:"Kullanımı ekole göre değişir; tek ve evrensel bir tanımı yoktur.",den:"Its scope varies by scholarly tradition; there is no single universal definition."},{tr:"Şive",en:"Traditional branch term",dtr:"Türkiye'deki geleneksel öğretim terminolojisinde kullanılan terim.",den:"A term used in traditional Turkish-language teaching."},{tr:"Ağız",en:"Regional variety",dtr:"Bir dilin bölgesel ses, biçim ve söz varlığı özellikleri.",den:"Regional phonological, grammatical, and lexical features of a language."}].map((item)=><div key={item.en} className="border border-[#d8d0c1] bg-[#f8f6f1] p-4"><div className="font-serif text-lg font-semibold text-[#12232c]">{locale==="tr"?item.tr:item.en}</div><p className="mt-2 text-xs leading-6 text-[#637078]">{locale==="tr"?item.dtr:item.den}</p></div>)}
+        </div>
+        <p className="mt-5 text-xs leading-6 text-[#637078]">{locale === "tr" ? "Not: Dil ile ağız arasındaki sınır yalnızca karşılıklı anlaşılabilirlikle belirlenmez; tarih, standartlaşma, kimlik ve toplumsal kullanım da etkilidir." : "Note: The boundary between a language and a dialect is not determined by mutual intelligibility alone; history, standardization, identity, and social use also matter."}</p>
+        <button type="button" onClick={()=>onNavigateToSource("tdk-tekin-2023")} className="mt-4 text-xs font-bold text-[#0e7490] underline underline-offset-4">{locale === "tr" ? "TDK terminoloji tartışmalarını incele ↗" : "Read the TDK terminology discussion ↗"}</button>
       </section>
     </div>
   );
