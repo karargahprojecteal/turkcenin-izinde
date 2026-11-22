@@ -313,4 +313,20 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     },
   },
 
+
+  {
+    id: "yildirim-capa-2022-atebet",
+    citation: "Yıldırım, F., & Çapa, G. N. (2022). Atebetü’l-Hakâyık’ın Eski Uygur Harfli Semerkand Nüshasının Paleografik İncelenmesi. Korkut Ata Türkiyat Araştırmaları Dergisi, 8, 56–103. https://doi.org/10.51531/korkutataturkiyat.1123528.",
+    authorOrInstitution: "Fikret Yıldırım & Gizem Nur Çapa · Korkut Ata Türkiyat Araştırmaları Dergisi",
+    year: "2022",
+    type: "journal",
+    url: "https://dergipark.org.tr/tr/pub/korkutataturkiyat/article/1123528",
+    doi: "10.51531/korkutataturkiyat.1123528",
+    accessDate: "2026-11-22",
+    supports: {
+      tr: "Atebetü’l-Hakâyık'ın Karahanlı dönemi eseri oluşu, 12. yüzyıla tarihlendirilmesi ve Eski Uygur harfli Semerkand nüshasının paleografisi.",
+      en: "Karakhanid-period context, 12th-century dating, and palaeography of the Old Uyghur-script Samarkand copy of Atebetü’l-Hakâyık.",
+    },
+  },
+
 ];
