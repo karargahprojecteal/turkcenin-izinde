@@ -244,8 +244,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     authorOrInstitution:"Gernot L. Windfuhr · Encyclopaedia Iranica", year:"2006 / 2016", type:"encyclopedia",
     url:"https://www.iranicaonline.org/articles/iran-vii7-turkic-languages/", accessDate:"2026-11-22",
     supports:{tr:"İran'daki Oğuz Türkçesi çeşitleri; Horasan Türkçesi, Kaşkayca ve Halaççanın farklı konumları.",en:"Oghuz Turkic varieties in Iran, including Khorasan Turkic, Qashqai, and the distinct position of Khalaj."}
-  }
-
+  },
   {
     id: "johanson-2020-classification",
     citation: "Johanson, L. (2020). The classification of the Turkic languages. In M. Robbeets & A. Savelyev (Eds.), The Oxford Guide to the Transeurasian Languages (pp. 105–114). Oxford University Press. https://doi.org/10.1093/oso/9780198804628.003.0009.",
