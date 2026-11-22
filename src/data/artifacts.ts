@@ -149,7 +149,7 @@ export const HISTORICAL_ARTIFACTS: HistoricalArtifact[] = [
     id: "codex-cumanicus",
     title: { tr: "Codex Cumanicus", en: "Codex Cumanicus" },
     periodId: "kipchak",
-    scriptId: "latin-turkish",
+    scriptId: "latin-medieval",
     date: "13.–14. Yüzyıl",
     location: { tr: "Kırım / Deşt-i Kıpçak", en: "Crimea / Pontic Steppe" },
     repository: { tr: "Biblioteca Nazionale Marciana (Venedik)", en: "Biblioteca Marciana (Venice)" },
@@ -208,4 +208,28 @@ export const HISTORICAL_ARTIFACTS: HistoricalArtifact[] = [
     },
     sourceIds: ["yilmaz-2011", "vekam-1928"],
   },
+
+  {
+    id: "dede-qorqud",
+    title: { tr: "Dede Korkut Kitabı (Kitâb-ı Dedem Korkud)", en: "The Book of Dede Qorqud" },
+    periodId: "old-anatolian",
+    scriptId: "arabic",
+    date: "Yazma nüshalar: 15. yüzyıl",
+    location: { tr: "Oğuz anlatı çevresi · Anadolu ve Azerbaycan", en: "Oghuz narrative sphere · Anatolia and Azerbaijan" },
+    repository: { tr: "Dresden ve Vatikan yazma nüshaları", en: "Dresden and Vatican manuscript witnesses" },
+    material: { tr: "Kâğıt üzerine yazma; iki ana nüsha", en: "Manuscript on paper; two principal witnesses" },
+    unescoStatus: { tr: "Dede Korkut anlatı geleneği UNESCO Somut Olmayan Kültürel Miras Listesi'nde (2018)", en: "The Dede Qorqud tradition was inscribed on UNESCO's Intangible Cultural Heritage List (2018)" },
+    excerptOriginal: "كتاب دده قورقود على لسان طائفة اوغوزان",
+    excerptTransliteration: "Kitâb-ı Dedem Ḳorḳud alâ lisân-ı ṭâife-i Oġuzân",
+    excerptTranslation: {
+      tr: "Oğuz topluluğunun diliyle Dedem Korkut'un Kitabı.",
+      en: "The Book of my Grandfather Korkut in the language of the Oghuz people.",
+    },
+    description: {
+      tr: "Oğuz anlatı geleneğinin sözlü ve yazılı katmanlarını bir araya getiren destansı hikâyeler bütünüdür. UNESCO kaydı, yalnızca yazma nüshaları değil, anlatma, müzik ve toplumsal aktarım pratikleriyle yaşayan mirası kapsar.",
+      en: "An epic cycle bringing together oral and written layers of Oghuz narrative tradition. The UNESCO inscription concerns the living heritage of storytelling, music and social transmission, not merely the manuscript witnesses.",
+    },
+    sourceIds: ["unesco-dede-qorqud-2018", "tdk-tekin-2023"],
+  },
+
 ];
