@@ -25,14 +25,14 @@ const PHONOLOGY_MATRIX = [
     arghu: "qız / tüş (Halaçça)",
   },
   {
-    feature: { tr: "Söz içi *d gelişimi ('ayak')", en: "Intervocalic *d ('foot')" },
-    proto: "*hadaq",
+    feature: { tr: "Eski Türkçe /d/ sesinin korunumu ('ayak')", en: "Retention of Old Turkic /d/ ('foot')" },
+    proto: "Old Turkic adaḳ",
     oghur: "ura (Çuvaşça)",
     oghuz: "ayak (Türkçe)",
     kipchak: "ayaq (Kazakça)",
     karluk: "oyoq / ayaq (Özbekçe)",
     siberian: "adak (Tuva) / azax (Hakas)",
-    arghu: "hadaq (Halaçça · h- + -d-)",
+    arghu: "hadaq (Halaçça · h- ve -d-)",
   },
   {
     feature: { tr: "Hece sonu -g ('dağ')", en: "Syllable-final -g ('mountain')" },
@@ -94,7 +94,7 @@ export function LanguageTreeSection({
     { id: "kipchak", x: 455, y: 295, shortLabel: locale === "tr" ? "Kıpçak (KB)" : "Kipchak (NW)" },
     { id: "karluk", x: 600, y: 295, shortLabel: locale === "tr" ? "Karluk (GD)" : "Karluk (SE)" },
     { id: "siberian", x: 745, y: 295, shortLabel: locale === "tr" ? "Sibirya (KD)" : "Siberian (NE)" },
-    { id: "arghu", x: 875, y: 295, shortLabel: locale === "tr" ? "Arğu (Halaç)" : "Arghu (Khalaj)" },
+    { id: "arghu", x: 875, y: 295, shortLabel: locale === "tr" ? "Halaç (özel konum)" : "Khalaj (special status)" },
   ];
 
   return (
@@ -106,8 +106,8 @@ export function LanguageTreeSection({
         </h2>
         <p className="mt-1 text-sm text-[#0f172a]/70">
           {locale === "tr"
-            ? "Proto-Türkçeden Oğur ve Genel Türkçe dallarına ayrılan 6 ana kol. İncelemek istediğiniz dalı veya dili seçin."
-            : "6 major branches splitting from Proto-Turkic into Oghur and Common Turkic. Select any branch or language node to inspect."}
+            ? "Bu şema, Oğur / Genel Türkçe ayrımını ve karşılaştırma için kullanılan başlıca grupları gösterir. Sibirya grubunun tek bir soy dalı olup olmadığı ve Halaççanın tarihî konumu tartışmalıdır."
+            : "This diagram shows the Oghur / Common Turkic split and major groups used for comparison. Whether Siberian Turkic forms one genealogical branch and the historical position of Khalaj remain debated."}
         </p>
       </div>
 
