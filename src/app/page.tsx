@@ -86,7 +86,7 @@ export default function HomePage() {
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
         {activeSection === "home" && (
-          <OverviewSection locale={locale} onNavigate={navigateToSection} />
+          <OverviewSection locale={locale} onNavigate={navigateToSection} onNavigateToPeriod={navigateToPeriod} />
         )}
 
         {activeSection === "timeline" && (
