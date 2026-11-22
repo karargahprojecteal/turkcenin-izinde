@@ -210,4 +210,39 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
       en: "Theoretical time depth of Proto-Turkic (~2,000 years internal reconstruction) and western Mongolia/steppe contacts.",
     },
   },
+  {
+    id:"savelyev-robbeets-2020",
+    citation:"Savelyev, A., & Robbeets, M. (2020). Bayesian phylolinguistics infers the internal structure and the time-depth of the Turkic language family. Journal of Language Evolution, 5(1), 39–53. https://doi.org/10.1093/jole/lzz010.",
+    authorOrInstitution:"Alexander Savelyev & Martine Robbeets · Journal of Language Evolution",
+    year:"2020", type:"journal", url:"https://academic.oup.com/jole/article/5/1/39/5736268", doi:"10.1093/jole/lzz010", accessDate:"2026-11-22",
+    supports:{tr:"Türk dillerinin iç sınıflandırmasındaki uzlaşma alanları, tartışmalı alt gruplar ve Bayesçi filogenetik yöntem.",en:"Areas of consensus and debate in internal Turkic classification, including Bayesian phylogenetic methods."}
+  },
+  {
+    id:"tdk-tekin-2023",
+    citation:"Tekin, T. (2023). Makaleler III: Çağdaş Türk Dilleri. Yayıma hazırlayanlar: E. Yılmaz & N. Demir. Ankara: Türk Dil Kurumu Yayınları, 1062. ISBN 978-975-16-2556-4.",
+    authorOrInstitution:"Talat Tekin · Türk Dil Kurumu", year:"2023", type:"book",
+    url:"https://tdk.gov.tr/wp-content/uploads/2023/03/1062.-Makaleler-III-Cagdas-Turk-Dilleri.pdf", accessDate:"2026-11-22",
+    supports:{tr:"Çağdaş Türk dillerinin sınıflandırılması ve Türkoloji ekollerinde dil, lehçe, şive ve ağız terimlerinin farklı kullanımları.",en:"Classification of modern Turkic languages and differing uses of language, dialect, and regional-variety terminology in Turkology."}
+  },
+  {
+    id:"iranica-khalaj-2010",
+    citation:"Knüppel, M. (2010; updated 2015). ḴALAJ ii. Ḵalaji Language. Encyclopaedia Iranica, XV(4), 364–365.",
+    authorOrInstitution:"Michael Knüppel · Encyclopaedia Iranica", year:"2010 / 2015", type:"encyclopedia",
+    url:"https://www.iranicaonline.org/articles/khalaj-ii-language/", accessDate:"2026-11-22",
+    supports:{tr:"Halaççanın tarihî araştırmaları, İran'daki coğrafyası, arkaik dil özellikleri ve Türk dilleri içindeki tartışmalı konumu.",en:"Historical research, geography in Iran, archaic features, and debated position of Khalaj within Turkic."}
+  },
+  {
+    id:"doerfer-khalaj-1978",
+    citation:"Doerfer, G. (1978). Khalaj and Its Relation to the Other Turkic Languages. Türk Dili Araştırmaları Yıllığı Belleten 1977, 17–33.",
+    authorOrInstitution:"Gerhard Doerfer · Türk Dil Kurumu Belleten", year:"1978", type:"journal",
+    url:"https://tdkbelleten.gov.tr/eng/full-text-pdf/289/eng", accessDate:"2026-11-22",
+    supports:{tr:"Halaççanın bağımsız bir Türk dili kolu olarak değerlendirilmesine ilişkin klasik çalışma.",en:"A classic study arguing for Khalaj as an independent branch within the Turkic language family."}
+  },
+  {
+    id:"iranica-turkic-persia-2006",
+    citation:"Windfuhr, G. L. (2006). IRAN vii. NON-IRANIAN LANGUAGES (7) Turkic Languages. Encyclopaedia Iranica, XIII(4), 396–401.",
+    authorOrInstitution:"Gernot L. Windfuhr · Encyclopaedia Iranica", year:"2006 / 2016", type:"encyclopedia",
+    url:"https://www.iranicaonline.org/articles/iran-vii7-turkic-languages/", accessDate:"2026-11-22",
+    supports:{tr:"İran'daki Oğuz Türkçesi çeşitleri; Horasan Türkçesi, Kaşkayca ve Halaççanın farklı konumları.",en:"Oghuz Turkic varieties in Iran, including Khorasan Turkic, Qashqai, and the distinct position of Khalaj."}
+  }
 ];
