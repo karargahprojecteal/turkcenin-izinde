@@ -299,7 +299,7 @@ export const TURKIC_BRANCHES: TurkicBranch[] = [
         currentScripts: ["Arap / Uluslararası Fonetik"],
         region: { tr: "Orta İran (Kum–Erak çevresi)", en: "Central Iran (Qom–Arak)" },
         speakersApprox: "~20–40 bin",
-        keyFeature: { tr: "Söz başı h- (hadaq) ve üçlü ünlü uzunluğu ayrımı.", en: "Initial h- (hadaq) and three-way vowel length distinctions." },
+        keyFeature: { tr: "Halaççada söz başı h- (hadaq) ve Eski Türkçe /d/ sesinin korunumu; ünlü uzunluğu hakkındaki tarihsel yorumlar ihtiyatla ele alınmalıdır.", en: "Initial h- (hadaq) and retention of Old Turkic /d/; historical claims about vowel quantity require caution." },
       },
     ],
     sourceIds: ["brill-etlo-classification", "johanson-csato-2022", "iranica-khalaj-2010", "doerfer-khalaj-1978"],
