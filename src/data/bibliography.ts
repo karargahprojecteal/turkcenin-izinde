@@ -440,9 +440,10 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
   },
   {
     id:"savelyev-robbeets-2020",
-    citation:"Savelyev, A., & Robbeets, M. (2020). Bayesian phylolinguistics infers the internal structure and the time-depth of the Turkic language family. Journal of Language Evolution, 5(1), 39–53. https://doi.org/10.1093/jole/lzz010.",
+    citation:"Savelyev, A., & Robbeets, M. (2020). Bayesian phylolinguistics infers the internal structure and the time-depth of the Turkic language family. Journal of Language Evolution, 5(1), 39–53. https://doi.org/10.1093/jole/lzz010",
     authorOrInstitution:"Alexander Savelyev & Martine Robbeets · Journal of Language Evolution",
     year:"2020", type:"journal", url:"https://academic.oup.com/jole/article/5/1/39/5736268", doi:"10.1093/jole/lzz010", accessDate:"2026-11-22",
+    evidenceLevel: "debated",
     supports:{tr:"Türk dillerinin iç sınıflandırmasındaki uzlaşma alanları, tartışmalı alt gruplar ve Bayesçi filogenetik yöntem.",en:"Areas of consensus and debate in internal Turkic classification, including Bayesian phylogenetic methods."}
   },
   {
@@ -450,6 +451,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     citation:"Tekin, T. (2023). Makaleler III: Çağdaş Türk Dilleri. Yayıma hazırlayanlar: E. Yılmaz & N. Demir. Ankara: Türk Dil Kurumu Yayınları, 1062. ISBN 978-975-16-2556-4.",
     authorOrInstitution:"Talat Tekin · Türk Dil Kurumu", year:"2023", type:"book",
     url:"https://tdk.gov.tr/wp-content/uploads/2023/03/1062.-Makaleler-III-Cagdas-Turk-Dilleri.pdf", accessDate:"2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports:{tr:"Çağdaş Türk dillerinin sınıflandırılması ve Türkoloji ekollerinde dil, lehçe, şive ve ağız terimlerinin farklı kullanımları.",en:"Classification of modern Turkic languages and differing uses of language, dialect, and regional-variety terminology in Turkology."}
   },
   {
@@ -457,6 +459,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     citation:"Knüppel, M. (2010; updated 2015). ḴALAJ ii. Ḵalaji Language. Encyclopaedia Iranica, XV(4), 364–365.",
     authorOrInstitution:"Michael Knüppel · Encyclopaedia Iranica", year:"2010 / 2015", type:"encyclopedia",
     url:"https://www.iranicaonline.org/articles/khalaj-ii-language/", accessDate:"2026-11-22",
+    evidenceLevel: "multi_academic",
     supports:{tr:"Halaççanın tarihî araştırmaları, İran'daki coğrafyası, arkaik dil özellikleri ve Türk dilleri içindeki tartışmalı konumu.",en:"Historical research, geography in Iran, archaic features, and debated position of Khalaj within Turkic."}
   },
   {
@@ -464,6 +467,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     citation:"Doerfer, G. (1978). Khalaj and Its Relation to the Other Turkic Languages. Türk Dili Araştırmaları Yıllığı Belleten 1977, 17–33.",
     authorOrInstitution:"Gerhard Doerfer · Türk Dil Kurumu Belleten", year:"1978", type:"journal",
     url:"https://tdkbelleten.gov.tr/eng/full-text-pdf/289/eng", accessDate:"2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports:{tr:"Halaççanın bağımsız bir Türk dili kolu olarak değerlendirilmesine ilişkin klasik çalışma.",en:"A classic study arguing for Khalaj as an independent branch within the Turkic language family."}
   },
   {
@@ -471,17 +475,19 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     citation:"Windfuhr, G. L. (2006). IRAN vii. NON-IRANIAN LANGUAGES (7) Turkic Languages. Encyclopaedia Iranica, XIII(4), 396–401.",
     authorOrInstitution:"Gernot L. Windfuhr · Encyclopaedia Iranica", year:"2006 / 2016", type:"encyclopedia",
     url:"https://www.iranicaonline.org/articles/iran-vii7-turkic-languages/", accessDate:"2026-11-22",
+    evidenceLevel: "multi_academic",
     supports:{tr:"İran'daki Oğuz Türkçesi çeşitleri; Horasan Türkçesi, Kaşkayca ve Halaççanın farklı konumları.",en:"Oghuz Turkic varieties in Iran, including Khorasan Turkic, Qashqai, and the distinct position of Khalaj."}
   },
   {
     id: "johanson-2020-classification",
-    citation: "Johanson, L. (2020). The classification of the Turkic languages. In M. Robbeets & A. Savelyev (Eds.), The Oxford Guide to the Transeurasian Languages (pp. 105–114). Oxford University Press. https://doi.org/10.1093/oso/9780198804628.003.0009.",
+    citation: "Johanson, L. (2020). The classification of the Turkic languages. In M. Robbeets & A. Savelyev (Eds.), The Oxford Guide to the Transeurasian Languages (pp. 105–114). Oxford University Press. https://doi.org/10.1093/oso/9780198804628.003.0009",
     authorOrInstitution: "Lars Johanson · Oxford University Press",
     year: "2020",
     type: "book",
     url: "https://academic.oup.com/book/41762/chapter-abstract/354235382",
     doi: "10.1093/oso/9780198804628.003.0009",
     accessDate: "2026-11-22",
+    evidenceLevel: "strong_consensus",
     supports: {
       tr: "Türk dillerinin soy sınıflandırmasında dil/lehçe ayrımı, göç, yakınsama ve temas etkileri.",
       en: "Genealogical classification, language/dialect distinctions, migration, convergence, and contact effects in Turkic.",
@@ -495,6 +501,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     type: "archive",
     url: "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-14/",
     accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "Eski Türk ve Soğd yazılarının Unicode kod aralıkları, tarihî tanıklıkları ve yazı özelliklerine ilişkin teknik bilgiler.",
       en: "Unicode encoding, historical attestations, and technical details of the Old Turkic and Sogdian scripts.",
@@ -508,6 +515,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     type: "encyclopedia",
     url: "https://www.iranicaonline.org/articles/codex-cumanicus/",
     accessDate: "2026-11-22",
+    evidenceLevel: "multi_academic",
     supports: {
       tr: "Codex Cumanicus'un yazma özellikleri, Kuman-Kıpçak dil malzemesi, Latin yazısı ve tarihsel bağlamı.",
       en: "Manuscript features, Cuman-Kipchak linguistic material, Latin script, and historical context of the Codex Cumanicus.",
@@ -521,6 +529,7 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     type: "unesco",
     url: "https://ich.unesco.org/en/RL/heritage-of-dede-qorqud-korkyt-ata-dede-korkut-epic-culture-folk-tales-and-music-01399",
     accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "Dede Korkut anlatı geleneğinin yaşayan aktarımı, sözlü-yazılı kültür ilişkisi ve 2018 UNESCO kaydı.",
       en: "Living transmission, oral-written culture relationship, and the 2018 UNESCO inscription of the Dede Qorqud tradition.",
@@ -534,22 +543,22 @@ export const ACADEMIC_SOURCES: AcademicSource[] = [
     type: "archive",
     url: "https://tdk.gov.tr/wp-content/uploads/2024/10/Agiz-Arastirmalari-Bilgi-Soleni-9-Mayis-1997.pdf",
     accessDate: "2026-11-22",
+    evidenceLevel: "multi_academic",
     supports: {
       tr: "Ağız, şive ve lehçe terimlerinin Türkoloji içindeki kullanımlarına dair bilimsel tartışmalar.",
       en: "Scholarly discussion of the terms dialect, regional variety, and speech variety in Turkology.",
     },
   },
-
-
   {
     id: "yildirim-capa-2022-atebet",
-    citation: "Yıldırım, F., & Çapa, G. N. (2022). Atebetü’l-Hakâyık’ın Eski Uygur Harfli Semerkand Nüshasının Paleografik İncelenmesi. Korkut Ata Türkiyat Araştırmaları Dergisi, 8, 56–103. https://doi.org/10.51531/korkutataturkiyat.1123528.",
+    citation: "Yıldırım, F., & Çapa, G. N. (2022). Atebetü’l-Hakâyık’ın Eski Uygur Harfli Semerkand Nüshasının Paleografik İncelenmesi. Korkut Ata Türkiyat Araştırmaları Dergisi, 8, 56–103. https://doi.org/10.51531/korkutataturkiyat.1123528",
     authorOrInstitution: "Fikret Yıldırım & Gizem Nur Çapa · Korkut Ata Türkiyat Araştırmaları Dergisi",
     year: "2022",
     type: "journal",
     url: "https://dergipark.org.tr/tr/pub/korkutataturkiyat/article/1123528",
     doi: "10.51531/korkutataturkiyat.1123528",
     accessDate: "2026-11-22",
+    evidenceLevel: "primary_supported",
     supports: {
       tr: "Atebetü’l-Hakâyık'ın Karahanlı dönemi eseri oluşu, 12. yüzyıla tarihlendirilmesi ve Eski Uygur harfli Semerkand nüshasının paleografisi.",
       en: "Karakhanid-period context, 12th-century dating, and palaeography of the Old Uyghur-script Samarkand copy of Atebetü’l-Hakâyık.",

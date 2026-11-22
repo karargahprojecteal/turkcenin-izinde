@@ -96,7 +96,7 @@ export function MuseumHeader({
           {/* Desktop Navigation */}
           <nav
             aria-label={locale === "tr" ? "Ana Gezinti" : "Primary Navigation"}
-            className="hidden items-center gap-1 lg:flex"
+            className="hidden items-center gap-1 xl:flex"
           >
             {NAV_ITEMS.map(({ id, labelKey, icon: Icon }) => {
               const isActive = activeSection === id;
@@ -156,7 +156,7 @@ export function MuseumHeader({
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-museum-drawer"
               aria-label={locale === "tr" ? "Menüyü aç/kapat" : "Toggle menu"}
-              className="focus-museum inline-flex items-center justify-center rounded-lg border border-[#e2dacb] bg-white p-1.5 text-[#0f172a] lg:hidden"
+              className="focus-museum inline-flex items-center justify-center rounded-lg border border-[#e2dacb] bg-white p-1.5 text-[#0f172a] xl:hidden"
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -168,7 +168,7 @@ export function MuseumHeader({
       {mobileMenuOpen && (
         <div
           id="mobile-museum-drawer"
-          className="border-t border-[#e2dacb] bg-[#f8f6f1] px-4 pb-4 pt-3 shadow-lg lg:hidden"
+          className="border-t border-[#e2dacb] bg-[#f8f6f1] px-4 pb-4 pt-3 shadow-lg xl:hidden"
         >
           <div className="mb-3 border-b border-[#e2dacb] pb-2 sm:hidden">
             <div className="font-serif text-sm font-bold tracking-wider text-[#0f172a]">
