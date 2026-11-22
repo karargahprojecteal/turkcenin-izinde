@@ -232,4 +232,27 @@ export const HISTORICAL_ARTIFACTS: HistoricalArtifact[] = [
     sourceIds: ["unesco-dede-qorqud-2018", "tdk-tekin-2023"],
   },
 
+
+  {
+    id: "atebetul-hakayik",
+    title: { tr: "Atebetü’l-Hakâyık", en: "Atebetü’l-Hakâyık (Threshold of Truths)" },
+    periodId: "karakhanid",
+    scriptId: "old-uyghur",
+    date: "Eser: 12. yüzyıl (tahmin) · Semerkand nüshası: 1444",
+    location: { tr: "Yüknek – Semerkand", en: "Yugnek – Samarkand" },
+    repository: { tr: "Süleymaniye Yazma Eser Kütüphanesi, Ayasofya 4012 (Semerkand nüshası)", en: "Süleymaniye Manuscript Library, Ayasofya 4012 (Samarkand copy)" },
+    material: { tr: "Eski Uygur harfli yazma nüsha", en: "Manuscript copy in Old Uyghur script" },
+    excerptOriginal: "عتبة الحقايق",
+    excerptTransliteration: "ʿAtabatu’l-Ḥaqāyiq",
+    excerptTranslation: {
+      tr: "Hakikatlerin eşiği.",
+      en: "The threshold of truths.",
+    },
+    description: {
+      tr: "Edib Ahmed Yüknekî'ye atfedilen dinî-ahlakî öğüt kitabıdır. Eserin yazılış tarihi ile günümüze ulaşan nüshaların istinsah tarihleri ayrıdır: Semerkand nüshası 1444'te Uygur harfleriyle istinsah edilmiştir. Bu nüsha, aynı Karahanlı Türkçesi metninin farklı yazı geleneklerinde aktarılabildiğini gösterir.",
+      en: "A religious and ethical didactic work attributed to Edib Ahmed Yüknekî. The composition date and surviving copy dates are distinct: the Samarkand copy was transcribed in 1444 using Old Uyghur script. It demonstrates the transmission of a Karakhanid Turkic text through different writing traditions.",
+    },
+    sourceIds: ["yildirim-capa-2022-atebet", "tdk-tekin-2023"],
+  },
+
 ];
