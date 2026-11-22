@@ -137,7 +137,7 @@ Sınırlılıklar:
 11. UNESCO Memory of the World. “Diwan Lughat al-Turk (Compendium of the Turkic Dialects)” (2017).
 12. UNESCO World Heritage Centre. “Orkhon Valley Cultural Landscape” (2004).
 13. UNESCO Intangible Cultural Heritage. “Heritage of Dede Qorqud/Korkyt Ata/Dede Korkut” (2018).
-14. The Unicode Consortium. (2024). *The Unicode Standard, Version 16.0*, Chapter 14.8: Old Turkic.
+14. The Unicode Consortium. (2026). *The Unicode Standard, Version 18.0*, Chapters 14.8 (Old Turkic) and 14.10 (Sogdian).
 15. Türk Dil Kurumu. Tekin, T. (2023). *Makaleler III: Çağdaş Türk Dilleri*.
 16. Türk Dil Kurumu. (1997). *Ağız Araştırmaları Bilgi Şöleni*.
 17. Yıldırım, F., & Çapa, G. N. (2022). “Atebetü’l-Hakâyık’ın Eski Uygur Harfli Semerkand Nüshasının Paleografik İncelenmesi.” *Korkut Ata Türkiyat Araştırmaları Dergisi*, 8, 56–103. https://doi.org/10.51531/korkutataturkiyat.1123528
