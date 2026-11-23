@@ -83,11 +83,11 @@ export function MuseumHeader({
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#b45309]/40 bg-[#0f172a] text-[#fbbf24] shadow-sm">
               <OrkhonEmblemSvg className="h-5 w-5" />
             </div>
-            <div className="hidden sm:block">
-              <div className="font-serif text-sm font-bold tracking-[0.14em] text-[#0f172a]">
+            <div className="hidden sm:block shrink-0">
+              <div className="font-serif text-sm font-bold tracking-[0.14em] text-[#0f172a] whitespace-nowrap">
                 {copy.brandTitle}
               </div>
-              <div className="text-[11px] font-medium text-[#0e7490]">
+              <div className="hidden text-[11px] font-medium text-[#0e7490] 2xl:block whitespace-nowrap">
                 {copy.brandSubtitle}
               </div>
             </div>
@@ -96,7 +96,7 @@ export function MuseumHeader({
           {/* Desktop Navigation */}
           <nav
             aria-label={locale === "tr" ? "Ana Gezinti" : "Primary Navigation"}
-            className="hidden items-center gap-1 xl:flex"
+            className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto xl:flex"
           >
             {NAV_ITEMS.map(({ id, labelKey, icon: Icon }) => {
               const isActive = activeSection === id;
@@ -106,14 +106,14 @@ export function MuseumHeader({
                   type="button"
                   onClick={() => onSelectSection(id)}
                   aria-current={isActive ? "page" : undefined}
-                  className={`focus-museum flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-all ${
+                  className={`focus-museum flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2 py-1.5 text-xs font-semibold transition-all ${
                     isActive
                       ? "bg-[#0f172a] text-[#f8f6f1] shadow-sm"
                       : "text-[#0f172a]/75 hover:bg-[#f1ede4] hover:text-[#0f172a]"
                   }`}
                 >
                   <Icon
-                    className={`h-3.5 w-3.5 ${
+                    className={`h-3.5 w-3.5 shrink-0 ${
                       isActive ? "text-[#38bdf8]" : "text-[#0e7490]"
                     }`}
                   />
@@ -124,12 +124,12 @@ export function MuseumHeader({
           </nav>
 
           {/* Right Controls: Search, TR/EN, Mobile Menu */}
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <button
               type="button"
               onClick={onOpenSearch}
               aria-label={copy.searchPlaceholder}
-              className="focus-museum flex items-center gap-2 rounded-lg border border-[#e2dacb] bg-white px-2.5 py-1.5 text-xs font-medium text-[#0f172a]/80 shadow-sm transition-colors hover:border-[#0e7490] hover:text-[#0f172a]"
+              className="focus-museum flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg border border-[#e2dacb] bg-white px-2.5 py-1.5 text-xs font-medium text-[#0f172a]/80 shadow-sm transition-colors hover:border-[#0e7490] hover:text-[#0f172a]"
             >
               <Search className="h-3.5 w-3.5 text-[#0e7490]" />
               <span className="hidden md:inline">
@@ -144,9 +144,9 @@ export function MuseumHeader({
               type="button"
               onClick={onToggleLocale}
               aria-label={locale === "tr" ? "Switch to English" : "Türkçeye Geç"}
-              className="focus-museum flex items-center gap-1.5 rounded-lg border border-[#0e7490]/30 bg-[#0e7490]/10 px-2.5 py-1.5 text-xs font-bold text-[#0e7490] transition-colors hover:bg-[#0e7490] hover:text-white"
+              className="focus-museum flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg border border-[#0e7490]/30 bg-[#0e7490]/10 px-2.5 py-1.5 text-xs font-bold text-[#0e7490] transition-colors hover:bg-[#0e7490] hover:text-white"
             >
-              <Globe className="h-3.5 w-3.5" />
+              <Globe className="h-3.5 w-3.5 shrink-0" />
               <span>{locale === "tr" ? "TR | EN" : "EN | TR"}</span>
             </button>
 
